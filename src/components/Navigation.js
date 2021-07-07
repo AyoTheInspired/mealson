@@ -165,7 +165,7 @@ const Wrap = styled.div`
 	}
 
 	& .single__cuisine-title {
-		font-size: 12px;
+		font-size: 15px;
 	}
 
 	& .large__cuisine-wrap {
