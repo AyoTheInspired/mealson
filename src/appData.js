@@ -70,3 +70,30 @@ export const navItems = [
 		itemName: "Learn More",
 	},
 ];
+
+export const menuItems = [
+	{
+		itemImgSrc: "./images/01.jpg",
+		itemTitle: "Burgers & Fries",
+	},
+	{
+		itemImgSrc: "./images/02.jpg",
+		itemTitle: "Noodles",
+	},
+	{
+		itemImgSrc: "./images/03.jpg",
+		itemTitle: "Sushi & Rolls",
+	},
+	{
+		itemImgSrc: "./images/04.jpg",
+		itemTitle: "Pizza & Pasta",
+	},
+	{
+		itemImgSrc: "./images/05.jpg",
+		itemTitle: "Coffee & Desserts",
+	},
+	{
+		itemImgSrc: "./images/06.jpg",
+		itemTitle: "Fruities",
+	},
+];

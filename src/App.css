@@ -5,12 +5,18 @@
 	--deep-hvr: #fe3638;
 	--mild-gry: #48566b;
 	--sht-trans: all 0.2s ease-in-out;
+	--card-border: 1px solid rgba(0, 0, 0, 0.125);
+	--card-radius: 0.25rem;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 }
+
+/* body {
+	background: red;
+} */
 
 .flexed {
 	display: flex;
@@ -24,6 +30,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.underline {
+	width: 50%;
+	height: 0.25rem;
+	margin: 0.6rem auto;
+	background: var(--nav-hvr);
 }
 
 /* .tippy-content, */

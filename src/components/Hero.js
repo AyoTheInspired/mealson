@@ -19,7 +19,7 @@ function Hero() {
 				<Row>
 					<div className="hero__text-wrap mx-auto flex-col">
 						<div className="hero__top">
-							<h4 className="mb-0 top__div-text text-white">
+							<h4 className="mb-0 top__div-text text-white text-center">
 								#1 Food Delivery Service since 2010
 							</h4>
 						</div>
