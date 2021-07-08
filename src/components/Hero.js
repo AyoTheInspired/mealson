@@ -70,8 +70,7 @@ export default Hero;
 const HeroSection = styled.section`
 	min-height: calc(100vh - 59px);
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-		url("https://res.cloudinary.com/ayotheinspired/image/upload/v1625677777/random-images/mealson__hero-bg_dcljeu.jpg")
-			center/cover no-repeat fixed;
+		url("./images/heroe.jpg") center/cover no-repeat fixed;
 
 	& .major-text {
 		font-family: "Rubik", sans-serif;
