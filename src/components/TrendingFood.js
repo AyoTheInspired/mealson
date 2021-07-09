@@ -30,16 +30,16 @@ function TrendingFood() {
 								return (
 									<Card
 										key={id}
-										className="menu__card col-sm col-md-5 col-lg-3 m-3">
+										className="menu__card col-sm col-md-4 col-lg-3 m-3">
 										<div className="card__img-wrap">
 											<Card.Img
 												className="card-img"
 												variant="top"
 												src={itemImgSrc}></Card.Img>
 										</div>
-										<Card.Body>
+										<Card.Body className="card__body py-2">
 											<Card.Title>
-												<h5 className="mb-0 menu__title text-center">
+												<h5 className="mb-0 menu__title mt-2 text-center">
 													{" "}
 													{itemTitle}{" "}
 												</h5>
@@ -66,19 +66,25 @@ const Section = styled.section`
 
 	& .trending__header-small {
 		color: var(--mild-gry);
-		/* white-space: nowrap; */
-		/* font-size: 18px; */
 	}
 
 	.menu__card {
 		cursor: pointer;
 		padding: 0 0 !important;
 		box-shadow: 0px 1px 15px #ddd;
-		/* margin: auto 0 !important; */
 	}
 
 	.card-img {
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
+	}
+
+	.card__body {
+		background: var(--nav-hvr) !important;
+		transition: var(--sht-trans);
+		&:hover {
+			background: var(--deep-hvr) !important;
+			color: #fff;
+		}
 	}
 `;
