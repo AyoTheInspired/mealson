@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import Hero from ".//Hero";
 import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";
+import Partners from "./Partners";
 
 function Home() {
 	return (
@@ -11,6 +12,7 @@ function Home() {
 			<Hero />
 			<TrendingFood />
 			<MobileSection />
+			<Partners />
 		</div>
 	);
 }

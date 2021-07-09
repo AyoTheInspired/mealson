@@ -66,6 +66,7 @@ const Section = styled.section`
 
 	& .trending__header-small {
 		color: var(--mild-gry);
+		font-size: 20px;
 	}
 
 	.menu__card {

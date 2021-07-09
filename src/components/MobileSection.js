@@ -7,39 +7,37 @@ function MobileSection() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="col d-flex flex-wrap justify-content-center align-items-center py-3 mx-auto">
-					<SectionWrap className="col mx-auto">
-						<div className="order-wrap col-lg-4 col-md-5 col-sm-10 mx-auto">
-							<h2 className="order__top mb-3">
-								Order food on the go with the <br /> Mealson App
-							</h2>
+				<Section className="col d-flex flex-wrap justify-content-around align-items-center py-3 mx-auto">
+					<div className="order-wrap col-lg-5 col-md-5 col-sm-10 ml-auto">
+						<h2 className="order__top mb-3">
+							Order food on the go with the <br /> Mealson App
+						</h2>
 
-							<h5 className="order__mid mb-0">
-								Pay with in app wallet, collect loyalty points, <br /> track
-								your orders in real time, and much more.
-							</h5>
+						<h5 className="order__mid mb-0">
+							Pay with in app wallet, collect loyalty points, <br /> track your
+							orders in real time, and much more.
+						</h5>
 
-							<div className="store__wrap col pl-0 flexed mt-4">
-								<img
-									src="./images/app-store.png"
-									alt=""
-									className="store__img w-25"
-								/>
-								<img
-									src="./images/gplay-badge.png"
-									alt=""
-									className="store__img w-25 mr-auto"
-								/>
-							</div>
-						</div>
-						<div className="phone-wrap mt-4 flexed col-lg-4 col-md-5 col-sm-10 mx-auto">
+						<div className="store__wrap col pl-0 flexed mt-4">
 							<img
-								src="./images/phone.png"
+								src="./images/app-store.png"
 								alt=""
-								className="phone__wrap-img w-75"
+								className="store__img w-25"
+							/>
+							<img
+								src="./images/gplay-badge.png"
+								alt=""
+								className="store__img w-25 mr-auto"
 							/>
 						</div>
-					</SectionWrap>
+					</div>
+					<div className="phone-wrap mt-4 flexed  col-lg-4 col-md-5 col-sm-10 mr-auto">
+						<img
+							src="./images/phone.png"
+							alt=""
+							className="phone__wrap-img w-50"
+						/>
+					</div>
 				</Section>
 			</Row>
 		</Container>
@@ -69,10 +67,7 @@ export const Section = styled.section`
 	}
 
 	.store__wrap {
-		/* max-width: 70%; */
-		/* cursor: pointer;
-		background: #000;
-		border-radius: 10px; */
+		cursor: pointer;
 	}
 
 	.store__inner {
@@ -80,10 +75,6 @@ export const Section = styled.section`
 		color: #000;
 		border-radius: 5px;
 	}
-
-	/* .store__img {
-		max-width: 70%;
-	} */
 
 	.store__img:first-child {
 		margin-right: 10px;
@@ -103,5 +94,3 @@ export const Section = styled.section`
 		font-weight: bold;
 	}
 `;
-
-const SectionWrap = styled.div``;
