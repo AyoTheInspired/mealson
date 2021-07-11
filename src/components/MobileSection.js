@@ -7,7 +7,7 @@ function MobileSection() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="col d-flex flex-wrap justify-content-around align-items-center py-3 mx-auto">
+				<Section className="col d-flex flex-wrap justify-content-center align-items-center py-3 mx-auto">
 					<div className="order-wrap col-lg-5 col-md-5 col-sm-10 ml-auto">
 						<h2 className="order__top mb-3">
 							Order food on the go with the <br /> Mealson App

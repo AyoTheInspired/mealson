@@ -33,6 +33,12 @@
 	align-items: center;
 }
 
+nav {
+	transition: var(--sht-trans);
+	display: flex;
+	justify-content: space-between !important;
+}
+
 .underline {
 	width: 50%;
 	height: 0.25rem;
