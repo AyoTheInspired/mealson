@@ -1,7 +1,7 @@
 import React from "react";
 import "./registration.css";
 
-function Signin() {
+function SignIn() {
 	return (
 		<div className="flexed bg-dark">
 			<h3 className="text white">HEY, I'M THE SIGN-IN PAGE</h3>
@@ -9,4 +9,4 @@ function Signin() {
 	);
 }
 
-export default Signin;
+export default SignIn;

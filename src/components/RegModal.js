@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Slide from "react-reveal/Slide";
 import { Modal, Button } from "react-bootstrap";
 import { FaLock, FaUser, FaTimes } from "react-icons/fa";
+import SignIn from "../registration/SignIn";
+import SignUp from "../registration/SignUp";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function RegModal({ showModal, setShowModal }) {
 	const [show, setShow] = useState(false);
@@ -11,31 +14,53 @@ function RegModal({ showModal, setShowModal }) {
 	const handleShow = () => setShow(true);
 
 	return (
-		<Container className="flexed">
-			<Slide top>
-				<nav className="mx-auto col-5 bg-warning modal__wrap">
-					<ul className="modal__header d-flex justify-content-between align-items-center p-2 text-white">
-						<li className="modal__header-left flexed">
-							{/* <div className="modal__left-wrap">
-							<div className="modal__title-item flexed"> */}
-							<span className="modal__item-icon mr-1 ">
-								<FaLock />
-							</span>
-							<h6 className="mb-0 mt-2 modal__item-text">Sign in</h6>
-							{/* </div>
-						</div> */}
-							<div className="modal__right-wrap"></div>
-						</li>
-						<div
-							className="modal__header-right"
-							onClick={() => setShowModal(!showModal)}>
-							<FaTimes className="close__modal-btn" />
-						</div>
-					</ul>
-					<div className="modal__header">modal body</div>
-				</nav>
-			</Slide>
-		</Container>
+		<Router>
+			<Container className="flexed">
+				{/* <Slide top> */}
+				<Wrap className="flex-col col-5 bg-warning">
+					<Header className="col">
+						<nav className="mx-auto  modal__wrap">
+							<ul className="modal__header d-flex justify-content-between align-items-center p-2 mr-auto bg-success">
+								<li className="modal__header-left flexed mr-3">
+									<span className="modal__item-icon mr-1 ">
+										<FaLock />
+									</span>
+									<h6 className="mb-0 mt-2 modal__item-text">Sign In</h6>
+									<div className="modal__right-wrap"></div>
+								</li>
+								<li className="modal__header-left flexed mr-auto">
+									<span className="modal__item-icon mr-1 ">
+										<FaUser />
+									</span>
+									<h6 className="mb-0 mt-2 modal__item-text">Sign Up</h6>
+
+									<div className="modal__right-wrap"></div>
+								</li>
+								<div
+									className="modal__header-right"
+									onClick={() => setShowModal(!showModal)}>
+									<FaTimes className="close__modal-btn" />
+								</div>
+							</ul>
+						</nav>
+					</Header>
+
+					<Body className="modal__body">
+						<SignIn />
+					</Body>
+				</Wrap>
+				{/* </Slide> */}
+
+				{/* <div className="modal__body">
+					<SignIn />
+				</div> */}
+			</Container>
+			{/* <Switch>
+				<div className="modal__body">
+					<Route path="/signin" exact component={SignIn} />
+				</div>
+			</Switch> */}
+		</Router>
 
 		// <ModalWrap>
 		// 	<Button variant="primary" onClick={handleShow}>
@@ -103,6 +128,7 @@ const Container = styled.section`
 
 	.modal__header-left {
 		list-style-type: none;
+		cursor: pointer;
 	}
 
 	.modal__content {
@@ -120,3 +146,9 @@ const Container = styled.section`
 		cursor: pointer;
 	}
 `;
+
+const Wrap = styled.section``;
+
+const Header = styled.div``;
+
+const Body = styled.div``;
