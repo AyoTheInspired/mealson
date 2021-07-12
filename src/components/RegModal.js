@@ -1,109 +1,45 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Slide from "react-reveal/Slide";
-import { Modal, Button } from "react-bootstrap";
-import { FaLock, FaUser, FaTimes } from "react-icons/fa";
-import SignIn from "../registration/SignIn";
 import SignUp from "../registration/SignUp";
+import SignIn from "../registration/SignIn";
+import RegModalHeader from "../registration/RegModalHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function RegModal({ showModal, setShowModal }) {
-	const [show, setShow] = useState(false);
-
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	const [defaultModalView, setDefaultModalView] = useState(true);
 
 	return (
 		<Router>
 			<Container className="flexed">
-				{/* <Slide top> */}
-				<Wrap className="flex-col col-5 bg-warning">
+				<Wrap className="flex-col col-lg-5 p-3">
 					<Header className="col">
-						<nav className="mx-auto  modal__wrap">
-							<ul className="modal__header d-flex justify-content-between align-items-center p-2 mr-auto bg-success">
-								<li className="modal__header-left flexed mr-3">
-									<span className="modal__item-icon mr-1 ">
-										<FaLock />
-									</span>
-									<h6 className="mb-0 mt-2 modal__item-text">Sign In</h6>
-									<div className="modal__right-wrap"></div>
-								</li>
-								<li className="modal__header-left flexed mr-auto">
-									<span className="modal__item-icon mr-1 ">
-										<FaUser />
-									</span>
-									<h6 className="mb-0 mt-2 modal__item-text">Sign Up</h6>
-								</li>
-								<div
-									className="modal__header-right"
-									onClick={() => setShowModal(!showModal)}>
-									<FaTimes className="close__modal-btn" />
-								</div>
-							</ul>
-						</nav>
+						<RegModalHeader
+							defaultModalView={defaultModalView}
+							setDefaultModalView={setDefaultModalView}
+							showModal={showModal}
+							setShowModal={setShowModal}
+						/>
 					</Header>
-
-					<Body className="modal__body">
-						{/* <SignIn /> */}
+					<Body className="col modal__body">
 						<Switch>
-							<Route path="/signup" exact component={SignUp} />
+							<Route path="/signup" component={SignUp} />
+							<Route component={SignIn} />
 						</Switch>
-						modal body
+						{defaultModalView && (
+							<SignIn
+								defaultModalView={defaultModalView}
+								setDefaultModalView={setDefaultModalView}
+							/>
+						)}
 					</Body>
 				</Wrap>
 			</Container>
 		</Router>
-
-		// <ModalWrap>
-		// 	<Button variant="primary" onClick={handleShow}>
-		// 		Launch demo modal
-		// 	</Button>
-
-		// 	<Modal
-		// 		aria-labelledby="contained-modal-title-vcenter"
-		// 		centered
-		// 		show={show}
-		// 		className="modal__content"
-		// 		onHide={handleClose}
-		// 		animation={false}>
-		// 		<Modal.Header closeButton>
-		// 			<Modal.Title className="modal__titie-wrap">
-		// 				<div className="mr-auto">
-		// 					<div className="modal__title-item flexed">
-		// 						<span className="modal__item-icon mr-1">
-		// 							<FaLock />
-		// 						</span>{" "}
-		// 						<h6 className="mb-0 modal__item-text">Sign in</h6>
-		// 					</div>
-		// 				</div>
-		// 			</Modal.Title>
-		// 		</Modal.Header>
-		// 		<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-		// 		<Modal.Footer>
-		// 			<Button variant="secondary" onClick={handleClose}>
-		// 				Close
-		// 			</Button>
-		// 			<Button variant="primary" onClick={handleClose}>
-		// 				Save Changes
-		// 			</Button>
-		// 		</Modal.Footer>
-		// 	</Modal>
-		// </ModalWrap>
 	);
 }
 
 export default RegModal;
-
-// const Button = styled.button`
-// 	min-width: 100px;
-// 	padding: 16px 32px;
-// 	border-radius: 4px;
-// 	border: none;
-// 	background: black;
-// 	color: #fff;
-// 	font-size: 24px;
-// 	cursor: pointer;
-// `;
 
 const Container = styled.section`
 	position: absolute;
@@ -113,33 +49,13 @@ const Container = styled.section`
 	width: 100vw;
 	z-index: 10;
 	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-
-	.modal__header {
-		/* background: #f1f7f8; */
-	}
-
-	.modal__header-left {
-		list-style-type: none;
-		cursor: pointer;
-	}
-
-	.modal__content {
-		background: red !important;
-	}
-
-	& .modal__item-text {
-		font-family: "Rubik", sans-serif;
-		font-size: 15px !important;
-		color: red !important;
-	}
-
-	.close__modal-btn {
-		font-size: 20px;
-		cursor: pointer;
-	}
 `;
 
-const Wrap = styled.section``;
+const Wrap = styled.section`
+	background: #f1f7f8;
+	border-radius: 5px;
+	box-shadow: 0px 15px 10px rgba(1, 1, 1, 0.8);
+`;
 
 const Header = styled.div``;
 

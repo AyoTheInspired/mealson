@@ -1,8 +1,48 @@
-.modal__link {
-	color: #fff;
+.modal__header {
+	background: var(--mild-gry);
 }
 
-.modal__link:hover {
-	color: #fff;
+.modal__header-left {
+	list-style-type: none;
+	font-family: "Rubik", sans-serif;
+	padding: 3px 10px;
+	border-bottom: 1px solid var(--nav-hvr);
+	transition: var(--sht-trans);
+}
+
+.modal__header-left:hover {
 	text-decoration: none;
+}
+
+.modal__header-left:active {
+	border-bottom-color: red !important;
+}
+
+.modal__item-icon {
+	color: var(--nav-hvr);
+}
+
+.modal__item-text {
+	color: #fff;
+	transition: var(--sht-trans);
+}
+
+.modal__item-text:hover {
+	color: var(--nav-hvr);
+}
+
+.modal__item-text:active {
+	color: var(--nav-hvr) !important;
+}
+
+.close__modal-btn {
+	font-size: 20px;
+	cursor: pointer;
+	color: #fff !important;
+	transition: var(--sht-trans);
+}
+
+.close__modal-btn:hover {
+	transform: scale(1.2);
+	color: var(--nav-hvr) !important;
 }

@@ -98,12 +98,12 @@ function Navigation() {
 																				<img
 																					src={cuisineSource}
 																					alt="cuisine__icon"
+																					className="cuisine__icon"
 																					width="25"
 																					height="25"
 																				/>
 																				<h6 className="large__cuisine-title">
-																					{" "}
-																					{cuisineName}{" "}
+																					{cuisineName}
 																				</h6>
 																			</div>
 																		</div>
@@ -123,7 +123,6 @@ function Navigation() {
 								})}
 							</div>
 						</Nav>
-
 						{searchClicked && (
 							<div className="nav__form-wrap">
 								<InputGroup className="pl-3">
@@ -192,7 +191,6 @@ const StyledNavbar = styled(Navbar)`
 			searchClicked
 				? {
 						width: "40%",
-						// @media(max-width: 768px)
 				  }
 				: null};
 	}
@@ -240,6 +238,7 @@ const StyledNavbar = styled(Navbar)`
 		&:hover {
 			color: #fff;
 			background: #000;
+			background: var(--deep-hvr);
 		}
 	}
 
@@ -266,7 +265,6 @@ const StyledNavbar = styled(Navbar)`
 		}
 
 		.nav__left {
-			/* width: 50%; */
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
@@ -277,7 +275,6 @@ const StyledNavbar = styled(Navbar)`
 		}
 
 		.nav__form-wrap {
-			/* display: inline; */
 			width: 100% !important;
 		}
 
@@ -300,11 +297,6 @@ const StyledNavbar = styled(Navbar)`
 			border-right: none;
 		}
 
-		.nav__icon,
-		.nav__link {
-			/* color: var(--mild-gry) !important; */
-		}
-
 		.nav__item-wrap {
 			margin: 5px auto;
 		}
@@ -316,9 +308,6 @@ const StyledNavbar = styled(Navbar)`
 		.large__cuisine-wrap {
 			display: flex;
 			flex-direction: row !important;
-			/* position: absolute;
-			top: 50%;
-			width: 100% !important; */
 		}
 	}
 `;
