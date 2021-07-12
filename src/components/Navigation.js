@@ -17,11 +17,13 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { navItems } from "../appData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import RegModal from "./RegModal";
 
 function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
+	const [showModal, setShowModal] = useState(false);
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY >= 100) {
@@ -156,11 +158,15 @@ function Navigation() {
 									className="nav__right-icon"
 									data-tip
 									data-for="account"
+									onClick={() => setShowModal(!showModal)}
 								/>
 								<StyledReactTooltip id="account" place="right" effect="solid">
 									<p className="nav__right-tooltip mb-0 p-0">Account</p>
 								</StyledReactTooltip>
 							</div>
+							{showModal && (
+								<RegModal showModal={showModal} setShowModal={setShowModal} />
+							)}
 						</div>
 					</Navbar.Collapse>
 				</Container>
