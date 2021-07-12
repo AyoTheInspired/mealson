@@ -33,8 +33,6 @@ function RegModal({ showModal, setShowModal }) {
 										<FaUser />
 									</span>
 									<h6 className="mb-0 mt-2 modal__item-text">Sign Up</h6>
-
-									<div className="modal__right-wrap"></div>
 								</li>
 								<div
 									className="modal__header-right"
@@ -46,20 +44,14 @@ function RegModal({ showModal, setShowModal }) {
 					</Header>
 
 					<Body className="modal__body">
-						<SignIn />
+						{/* <SignIn /> */}
+						<Switch>
+							<Route path="/signup" exact component={SignUp} />
+						</Switch>
+						modal body
 					</Body>
 				</Wrap>
-				{/* </Slide> */}
-
-				{/* <div className="modal__body">
-					<SignIn />
-				</div> */}
 			</Container>
-			{/* <Switch>
-				<div className="modal__body">
-					<Route path="/signin" exact component={SignIn} />
-				</div>
-			</Switch> */}
 		</Router>
 
 		// <ModalWrap>
