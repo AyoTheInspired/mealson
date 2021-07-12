@@ -5,20 +5,14 @@ import "tippy.js/dist/tippy.css"; // optional
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-import {
-	Container,
-	Row,
-	Dropdown,
-	DropdownButton,
-	Button,
-} from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 function Hero() {
 	return (
 		<HeroSection className="flexed hero__section">
 			<Container>
 				<Row>
-					<div className="hero__text-wrap mx-auto flex-col">
+					<div className="hero__text-wrap mx-auto flex-col col-sm">
 						<Fade bottom>
 							<div className="hero__top">
 								<h4 className="mb-0 top__div-text text-white text-center">

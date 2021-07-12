@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { menuItems } from "../appData";
-import { Container, Row, Card, Toast, Button } from "react-bootstrap";
+import { Container, Row, Card, Toast } from "react-bootstrap";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 import { BiDish } from "react-icons/bi";
@@ -9,7 +9,6 @@ import { BiDish } from "react-icons/bi";
 function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
-	const [show, setShow] = useState(false);
 
 	return (
 		<Container fluid>
@@ -75,7 +74,6 @@ function TrendingFood() {
 														onClick={(e) => {
 															setTrayClicked(true);
 															setTrayTitle(itemTitle);
-															// console.log(itemTitle);
 														}}>
 														<span className="meal__tray-icon mb-1 mr-1">
 															<BiDish />

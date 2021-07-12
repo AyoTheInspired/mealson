@@ -1,11 +1,7 @@
-// import { IoLocationOutline } from "react-icons/io";
 import { BiDish } from "react-icons/bi";
-import { FaHome, FaMapPin, FaTruck } from "react-icons/fa";
-import { GiMeal } from "react-icons/gi";
+import { FaTruck } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
-import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { BsQuestionCircle } from "react-icons/bs";
-import { GrCircleQuestion, GrDeliver, GrLocation } from "react-icons/gr";
 
 export const navItems = [
 	{
@@ -26,7 +22,6 @@ export const navItems = [
 	{
 		itemIcon: <BiDish />,
 		itemName: "Cuisine",
-		// dropdown: true,
 		hoverItems: [
 			{
 				cuisineSource: "./images/burger.svg",

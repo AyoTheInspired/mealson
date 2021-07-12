@@ -17,10 +17,6 @@
 	padding: 0;
 }
 
-/* body {
-	background: red;
-} */
-
 .flexed {
 	display: flex;
 	justify-content: center;
@@ -47,10 +43,3 @@ nav {
 	margin: 0.6rem auto;
 	background: var(--nav-hvr);
 }
-
-/* .tippy-content, */
-/* .tippy-box {
-	display: flex !important;
-	flex-direction: row !important;
-	min-width: 500px !important;
-} */

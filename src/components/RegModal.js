@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Slide from "react-reveal/Slide";
 import SignUp from "../registration/SignUp";
 import SignIn from "../registration/SignIn";
 import RegModalHeader from "../registration/RegModalHeader";
@@ -12,7 +11,7 @@ function RegModal({ showModal, setShowModal }) {
 	return (
 		<Router>
 			<Container className="flexed">
-				<Wrap className="flex-col col-lg-5 p-3">
+				<Wrap className="flex-col col-lg-5 col-md-6 col-sm-10 mx-auto p-3">
 					<Header className="col">
 						<RegModalHeader
 							defaultModalView={defaultModalView}
@@ -23,8 +22,8 @@ function RegModal({ showModal, setShowModal }) {
 					</Header>
 					<Body className="col modal__body">
 						<Switch>
-							<Route path="/signup" component={SignUp} />
-							<Route component={SignIn} />
+							<Route path="/signup" exact component={SignUp} />
+							<Route path="/signin" exact component={SignIn} />
 						</Switch>
 						{defaultModalView && (
 							<SignIn
@@ -48,7 +47,7 @@ const Container = styled.section`
 	height: 100vh;
 	width: 100vw;
 	z-index: 10;
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 `;
 
 const Wrap = styled.section`

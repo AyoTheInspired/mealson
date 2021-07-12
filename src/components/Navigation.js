@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+import "tippy.js/dist/tippy.css";
 import {
 	Navbar,
 	Nav,
 	Container,
-	Row,
-	Form,
 	FormControl,
-	Button,
 	InputGroup,
 } from "react-bootstrap";
 import ReactTooltip from "react-tooltip";
@@ -35,7 +32,6 @@ function Navigation() {
 
 	window.addEventListener("resize", () => {
 		if (window.innerWidth <= 768) {
-			console.log("Tab screen");
 			setSearchClicked(true);
 		} else {
 			setSearchClicked(false);
@@ -48,7 +44,7 @@ function Navigation() {
 				expand="lg"
 				bg="dark"
 				fixed="top"
-				className={`${fixedNav ? "py-2" : "py-3"} px-0`}>
+				className={`${fixedNav ? "py-2" : "py-3"}`}>
 				<Container className="mx-0">
 					<Navbar.Brand>
 						<img
@@ -122,6 +118,7 @@ function Navigation() {
 									);
 								})}
 							</div>
+							<h5 className="mx-auto d-lg-none">plenary</h5>
 						</Nav>
 						{searchClicked && (
 							<div className="nav__form-wrap">
@@ -175,8 +172,6 @@ function Navigation() {
 }
 
 export default Navigation;
-
-const Wrap = styled.div``;
 
 const StyledNavbar = styled(Navbar)`
 	position: ${(searchClicked) => (searchClicked ? "fixed" : null)};
@@ -289,7 +284,6 @@ const StyledNavbar = styled(Navbar)`
 
 		.nav__form-input {
 			border: 0 !important;
-			outline: 0 !important;
 			box-shadow: none !important;
 		}
 

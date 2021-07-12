@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 import { FaLock, FaUserAlt, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./registration.css";
@@ -11,7 +10,7 @@ function RegModalHeader({
 	setDefaultModalView,
 }) {
 	return (
-		<nav className="mx-auto modal__wrap bg-danger">
+		<nav className="mx-auto modal__wrap">
 			<ul className="modal__header d-flex justify-content-between align-items-center p-2 mr-auto">
 				<Link
 					to="signin"
@@ -45,34 +44,3 @@ function RegModalHeader({
 }
 
 export default RegModalHeader;
-
-const Container = styled.section`
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	z-index: 10;
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-
-	.modal__header {
-		/* background: #f1f7f8; */
-	}
-
-	.modal__header-left {
-		list-style-type: none;
-		cursor: pointer;
-	}
-
-	/* .modal__content {
-		background: red !important;
-	} */
-
-	& .modal__item-text {
-		font-family: "Rubik", sans-serif;
-		font-size: 15px !important;
-		color: brown !important;
-	}
-`;
-
-const Wrap = styled.section``;

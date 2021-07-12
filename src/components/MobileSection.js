@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
-import { FaGooglePlay, FaApple } from "react-icons/fa";
 
 function MobileSection() {
 	return (
