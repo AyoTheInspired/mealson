@@ -1,6 +1,6 @@
 import React from "react";
 import "./registration.css";
-import { FaUserCheck, FaUserLock } from "react-icons/fa";
+import { FaUserCheck, FaUserLock, FaEye } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
 
@@ -48,7 +48,7 @@ function SignUp() {
 						variant="secondary"
 						className="form__icon-btn"
 						id="reg__form-password">
-						<FaUserLock className="reg__form-append" />
+						<FaEye className="reg__form-append" />
 					</Button>
 				</InputGroup.Append>
 			</InputGroup>
@@ -65,7 +65,7 @@ function SignUp() {
 						variant="secondary"
 						className="form__icon-btn"
 						id="reg__form-password">
-						<FaUserLock className="reg__form-append" />
+						<FaEye className="reg__form-append" />
 					</Button>
 				</InputGroup.Append>
 			</InputGroup>

@@ -34,7 +34,6 @@ function RegModalHeader({
 					className="modal__header-right"
 					onClick={() => {
 						setShowModal(!showModal);
-						setDefaultModalView(true);
 					}}>
 					<FaTimes className="close__modal-btn" />
 				</div>

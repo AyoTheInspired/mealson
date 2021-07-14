@@ -45,16 +45,27 @@ function Navigation() {
 				bg="dark"
 				fixed="top"
 				className={`${fixedNav ? "py-2" : "py-3"}`}>
-				<Container className="mx-0">
+				<Container className="">
 					<Navbar.Brand>
 						<img
 							src="./images/brand.png"
 							alt="site-logo"
-							className="site__brand mx-4"
+							className="site__brand mr-4"
 							height="30"
 							width="30"
 						/>
 					</Navbar.Brand>
+					{/* <div className="nav__right-item">
+						<AiOutlineUser
+							className="nav__right-icon"
+							data-tip
+							data-for="account"
+							onClick={() => setShowModal(!showModal)}
+						/>
+						<StyledReactTooltip id="account" place="right" effect="solid">
+							<p className="nav__right-tooltip mb-0 p-0">Account</p>
+						</StyledReactTooltip>
+					</div> */}
 					<Navbar.Toggle aria-controls="the-nav">
 						<div
 							className="nav-toggler"
@@ -118,10 +129,14 @@ function Navigation() {
 									);
 								})}
 							</div>
-							<h5 className="mx-auto d-lg-none">plenary</h5>
+							<button
+								className="mx-auto d-lg-none px-3 py-1 my-2 w-50"
+								onClick={() => setShowModal(true)}>
+								Account
+							</button>
 						</Nav>
 						{searchClicked && (
-							<div className="nav__form-wrap">
+							<div className="nav__form-wrap mr-2">
 								<InputGroup className="pl-3">
 									<InputGroup.Prepend>
 										<InputGroup.Text className="nav__form__icon-wrap">
@@ -174,7 +189,7 @@ function Navigation() {
 export default Navigation;
 
 const StyledNavbar = styled(Navbar)`
-	position: ${(searchClicked) => (searchClicked ? "fixed" : null)};
+	/* position: ${(searchClicked) => (searchClicked ? "fixed" : null)}; */
 
 	& .nav__item-wrap:first-child {
 		border-right: 1px solid gray;
@@ -188,6 +203,10 @@ const StyledNavbar = styled(Navbar)`
 						width: "40%",
 				  }
 				: null};
+	}
+
+	.nav__link {
+		white-space: nowrap;
 	}
 
 	& .nav__item-wrap,
@@ -311,6 +330,5 @@ const StyledReactTooltip = styled(ReactTooltip)`
 		border: none !important;
 		margin: 0 !important;
 	}
-
 	transition: var(--sht-trans);
 `;

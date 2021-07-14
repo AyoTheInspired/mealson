@@ -6,9 +6,9 @@ function Partners() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="flexed my-4 flex-wrap col mx-auto">
-					<div className="courier__wrap flexed col-lg-6 col-md mx-auto col-sm">
-						<div className="courier__wrap-text flex-col align-items-start">
+				<Section className="flexed my-4 flex-wrap col-lg mx-auto px-2">
+					<div className="courier__wrap flexed flex-wrap mx-2 col-lg col-md-10 col-sm-10 py-4">
+						<div className="courier-text col flex-col align-items-start ">
 							<h3 className="partners__title mb-3">Become a Courier</h3>
 							<p className="partners__summary">
 								Earn competitive salary as a delivery <br /> courier working
@@ -17,30 +17,22 @@ function Partners() {
 							<button className="partners__btn">Start earning</button>
 						</div>
 						<div className="courier__wrap-img">
-							<img
-								src="./images/courier.png"
-								alt=""
-								className="d-block mx-auto mx-sm-0"
-								width="272"
-							/>
+							<img src="./images/courier.png" alt="" className="" width="270" />
 						</div>
 					</div>
-					{/* <div className="courier__wrap flexed col-lg-5 col-md-4 col-sm-8 pl-5">
-						<div className="courier__wrap-text d-flex flex-column justify-content-center align-items-start">
-							<h3 className="partners__title mb-3">Become a Courier</h3>
+					{/*  */}
+					<div className="courier__wrap flexed flex-wrap mx-3 col-lg col-md-10 col-sm-10 py-4">
+						<div className="courier-text col flex-col align-items-start ">
+							<h3 className="partners__title mb-3">Become a Partner</h3>
 							<p className="partners__summary">
-								Earn competitive salary as a delivery <br /> courier working
-								with a flexible schedule.
+								Grow your business by reaching <br /> new clients.
 							</p>
-							<button className="partners__btn">Start earning</button>
+							<button className="partners__btn">Partner with us</button>
 						</div>
-						<img
-							src="./images/courier.png"
-							alt=""
-							className="courier__wrap-img d-block w-50"
-						/>
-					</div> */}
-					{/* <div className="partner__wrap col"></div> */}
+						<div className="courier__wrap-img">
+							<img src="./images/chef.png" alt="" className="" width="270" />
+						</div>
+					</div>
 				</Section>
 			</Row>
 		</Container>
@@ -50,36 +42,17 @@ function Partners() {
 export default Partners;
 
 const Section = styled.section`
-	padding: 80px;
-
-	.courier__wrap {
-		padding-left: 10px !important;
-	}
-
 	.courier__wrap:first-child {
 		background: #69b3fe17;
-		/* margin-right: 30px; */
-
-		@media (max-width: 768px) {
-			margin-right: auto;
-			margin-left: auto;
-		}
 	}
 
 	.courier__wrap:last-child {
 		background: #fea56917;
 	}
 
-	/* .courier__wrap-img {
-		max-width: 100%;
-		max-height: 100%;
-	} */
-
 	.partners__title {
 		font-family: "Rubik", sans-serif;
 		font-size: 32px;
-		/* white-space: nowrap; */
-		/* margin-bottom: 25px; */
 	}
 
 	.partners__summary {
@@ -105,12 +78,24 @@ const Section = styled.section`
 	}
 
 	@media (max-width: 425px) {
-		/* .courier__wrap-text {
-			display: block !important;
+		/* .courier-text {
+			margin: 10px auto !important;
 		} */
-		/* .partners__title,
+		.partners__title {
+			white-space: nowrap;
+		}
+
+		.partners__title,
 		.partners__summary {
 			text-align: center;
-		} */
+		}
+
+		.partners__btn {
+			margin: 10px auto !important;
+		}
+
+		.courier__wrap-img {
+			margin: 8px auto !important;
+		}
 	}
 `;

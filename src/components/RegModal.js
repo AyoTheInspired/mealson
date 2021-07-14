@@ -11,7 +11,7 @@ function RegModal({ showModal, setShowModal }) {
 	return (
 		<Router>
 			<Container className="flexed">
-				<Wrap className="flex-col col-lg-5 col-md-6 col-sm-10 mx-auto p-3">
+				<Wrap className="flex-col col-lg-5 col-md-6 col-sm-8 mx-auto p-3">
 					<Header className="col">
 						<RegModalHeader
 							defaultModalView={defaultModalView}
@@ -25,12 +25,6 @@ function RegModal({ showModal, setShowModal }) {
 							<Route path="/signup" exact component={SignUp} />
 							<Route path="/signin" exact component={SignIn} />
 						</Switch>
-						{defaultModalView && (
-							<SignIn
-								defaultModalView={defaultModalView}
-								setDefaultModalView={setDefaultModalView}
-							/>
-						)}
 					</Body>
 				</Wrap>
 			</Container>

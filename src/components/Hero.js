@@ -4,73 +4,70 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
-
 import { Container, Row } from "react-bootstrap";
 
 function Hero() {
 	return (
-		<HeroSection className="flexed hero__section">
-			<Container>
-				<Row>
-					<div className="hero__text-wrap mx-auto flex-col col-sm">
-						<Fade bottom>
-							<div className="hero__top">
-								<h4 className="mb-0 top__div-text text-white text-center">
-									#1 Food Delivery Service since 2010
-								</h4>
-							</div>
-						</Fade>
+		// <HeroSection className="flexed hero__section">
+		<Container fluid>
+			<Row>
+				<Section className="hero__text-wrap mx-auto flex-col col">
+					<Fade bottom>
+						<div className="hero__top">
+							<h4 className="mb-0 top__div-text text-white text-center">
+								ADD A SCROLLs TO TOP BUTTON #1 Food Delivery Service since 2010
+							</h4>
+						</div>
+					</Fade>
 
-						<Fade left>
-							<div className="hero__mid mt-4 mb-5">
-								<h2 className="major-text mb-0 text-center text-white">
-									We deliver your favorite food <br /> fresh & fast in{" "}
-									<Tippy
-										interactive
-										trigger="click"
-										placement="right"
-										arrow={false}
-										content={
-											<div className="hero__tip-wrap">
-												<h6 className="mb-0 hero__tip-item p-2">Los Angeles</h6>
-												<h6 className="mb-0 hero__tip-item p-2">Chicago</h6>
-												<h6 className="mb-0 hero__tip-item p-2">Houston</h6>
-												<h6 className="mb-0 hero__tip-item p-2">
-													Philadelphia
-												</h6>
-												<h6 className="mb-0 hero__tip-item p-2">San Diego</h6>
-												<h6 className="mb-0 hero__tip-item p-2">Miami</h6>
-												<h6 className="mb-0 hero__tip-item p-2">New York</h6>
-											</div>
-										}>
-										<span className="hero__dropdown">
-											Lagos
-											<IoMdArrowDropdown />{" "}
-										</span>
-									</Tippy>
-								</h2>
-							</div>
-						</Fade>
+					<Fade left>
+						<div className="hero__mid mt-4 mb-5">
+							<h2 className="major-text mb-0 text-center text-white">
+								We deliver your favorite food <br /> fresh & fast in{" "}
+								<Tippy
+									interactive
+									trigger="click"
+									placement="right"
+									arrow={false}
+									content={
+										<div className="hero__tip-wrap">
+											<h6 className="mb-0 hero__tip-item p-2">Los Angeles</h6>
+											<h6 className="mb-0 hero__tip-item p-2">Chicago</h6>
+											<h6 className="mb-0 hero__tip-item p-2">Houston</h6>
+											<h6 className="mb-0 hero__tip-item p-2">Philadelphia</h6>
+											<h6 className="mb-0 hero__tip-item p-2">San Diego</h6>
+											<h6 className="mb-0 hero__tip-item p-2">Miami</h6>
+											<h6 className="mb-0 hero__tip-item p-2">New York</h6>
+										</div>
+									}>
+									<span className="hero__dropdown">
+										Lagos
+										<IoMdArrowDropdown />{" "}
+									</span>
+								</Tippy>
+							</h2>
+						</div>
+					</Fade>
 
-						<Fade right>
-							<div className="hero__third">
-								<button className="hero__btn">
-									<h5 className="mb-0 hero__btn-text">
-										What would you like to eat?
-									</h5>
-								</button>
-							</div>
-						</Fade>
-					</div>
-				</Row>
-			</Container>
-		</HeroSection>
+					<Fade right>
+						<div className="hero__third">
+							<button className="hero__btn">
+								<h5 className="mb-0 hero__btn-text">
+									What would you like to eat?
+								</h5>
+							</button>
+						</div>
+					</Fade>
+				</Section>
+			</Row>
+		</Container>
+		// </HeroSection>
 	);
 }
 
 export default Hero;
 
-const HeroSection = styled.section`
+const Section = styled.section`
 	min-height: 100vh;
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
 		url("./images/heroe.jpg") center/cover no-repeat fixed;
