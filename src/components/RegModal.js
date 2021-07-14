@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SignUp from "../registration/SignUp";
-import SignIn from "../registration/SignIn";
+// import SignIn from "../registration/SignIn";
+import UserLogin from "../registration/UserLogin";
 import RegModalHeader from "../registration/RegModalHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -23,7 +24,7 @@ function RegModal({ showModal, setShowModal }) {
 					<Body className="col modal__body">
 						<Switch>
 							<Route path="/signup" exact component={SignUp} />
-							<Route path="/signin" exact component={SignIn} />
+							<Route path="/signin" exact component={UserLogin} />
 						</Switch>
 					</Body>
 				</Wrap>
