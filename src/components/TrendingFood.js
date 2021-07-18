@@ -33,30 +33,33 @@ function TrendingFood() {
 								<h3 className="text-center mb-0">Our Menu</h3>
 							</div>
 						</Slide>
-						<ToastContainer position="top-center" className="toast__wrap">
-							<Toast
-								onClose={() => setTrayClicked(false)}
-								show={trayClicked}
-								delay={3000}
-								autohide>
-								<Toast.Header className="d-flex justify-content-between align-items-center toast__header">
-									<img
-										src="./images/brand.png"
-										className="my-1"
-										width="30"
-										height="30"
-										alt=""
-									/>
-									<strong className="me-auto">Mealson</strong>
-								</Toast.Header>
-								<Toast.Body>
-									<h5 className="toast__msg text-center">
-										<span className="tray__title mr-1">{trayTitle}</span> has
-										been added to tray.
-									</h5>
-								</Toast.Body>
-							</Toast>
-						</ToastContainer>
+
+						{trayClicked && (
+							<ToastContainer position="top-center" className="toast__wrap p-5">
+								<Toast
+									onClose={() => setTrayClicked(false)}
+									show={trayClicked}
+									delay={3000}
+									autohide>
+									<Toast.Header className="d-flex justify-content-between align-items-center toast__header">
+										<img
+											src="./images/brand.png"
+											className="my-1"
+											width="30"
+											height="30"
+											alt=""
+										/>
+										<strong className="me-auto">Mealson</strong>
+									</Toast.Header>
+									<Toast.Body>
+										<h5 className="toast__msg text-center">
+											<span className="tray__title mr-1">{trayTitle}</span> has
+											been added to tray.
+										</h5>
+									</Toast.Body>
+								</Toast>
+							</ToastContainer>
+						)}
 
 						<div className="menu-wrap flexed flex-wrap p-4">
 							{menuItems.map((menu, id) => {
@@ -222,4 +225,5 @@ const ToastContainer = styled.div`
 	top: 20%;
 	transform: translateX(-50%);
 	z-index: 15;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 `;

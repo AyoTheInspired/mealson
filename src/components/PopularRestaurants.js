@@ -24,13 +24,11 @@ function PopularRestaurants() {
 							const { resName, resLogo } = restaurant;
 
 							return (
-								<a href="#" className="res__wrap">
-									<img
-										src={resLogo}
-										alt={resLogo}
-										className="res__img w-25  p-3 mx-3 my-2"
-									/>
-								</a>
+								<img
+									src={resLogo}
+									alt={resLogo}
+									className="res__img w-25 p-3 mx-3 my-2"
+								/>
 							);
 						})}
 					</Wrap>
@@ -55,6 +53,7 @@ const Section = styled.section`
 
 const Wrap = styled.div`
 	.res__img {
+		cursor: pointer;
 		width: 22% !important;
 		box-shadow: 0px 3px 12px #ddd;
 
