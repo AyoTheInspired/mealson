@@ -217,8 +217,9 @@ const Section = styled.section`
 `;
 
 const ToastContainer = styled.div`
-	position: absolute;
-	left: 0;
-	top: 50%;
-	z-index: 5;
+	position: fixed;
+	left: 50%;
+	top: 20%;
+	transform: translateX(-50%);
+	z-index: 15;
 `;

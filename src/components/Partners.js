@@ -7,7 +7,7 @@ function Partners() {
 		<Container fluid>
 			<Row>
 				<Section className="flexed my-4 flex-wrap col-lg mx-auto px-2">
-					<div className="courier__wrap flexed flex-wrap mx-2 col-lg col-md-10 col-sm-10 py-4">
+					<div className="courier__wrap flexed flex-wrap mx-2 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
 						<div className="courier-text col flex-col align-items-start ">
 							<h3 className="partners__title mb-3">Become a Courier</h3>
 							<p className="partners__summary">
@@ -21,7 +21,7 @@ function Partners() {
 						</div>
 					</div>
 					{/*  */}
-					<div className="courier__wrap flexed flex-wrap mx-3 col-lg col-md-10 col-sm-10 py-4">
+					<div className="courier__wrap flexed flex-wrap mx-3 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
 						<div className="courier-text col flex-col align-items-start ">
 							<h3 className="partners__title mb-3">Become a Partner</h3>
 							<p className="partners__summary">
