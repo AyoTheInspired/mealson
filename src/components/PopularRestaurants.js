@@ -59,6 +59,7 @@ const Wrap = styled.div`
 
 		@media (max-width: 450px) {
 			width: 80% !important;
+			margin: 20px auto !important;
 		}
 	}
 `;
