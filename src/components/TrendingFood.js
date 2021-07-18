@@ -35,12 +35,15 @@ function TrendingFood() {
 						</Slide>
 
 						{trayClicked && (
-							<ToastContainer position="top-center" className="toast__wrap p-5">
+							<ToastContainer
+								position="top-center"
+								className="toast__wrap p-5 col">
 								<Toast
 									onClose={() => setTrayClicked(false)}
 									show={trayClicked}
 									delay={3000}
-									autohide>
+									autohide
+									className="mx-auto">
 									<Toast.Header className="d-flex justify-content-between align-items-center toast__header">
 										<img
 											src="./images/brand.png"
