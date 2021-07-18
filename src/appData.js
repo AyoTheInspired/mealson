@@ -95,27 +95,39 @@ export const menuItems = [
 
 export const restaurants = [
 	{
-		resName: "McDonalds",
 		resLogo: "./images/01.png",
 	},
 	{
-		resName: "McDonalds",
-		resLogo: "./images/01.png",
+		resLogo: "./images/02.png",
 	},
 	{
-		resName: "McDonalds",
-		resLogo: "./images/01.png",
+		resLogo: "./images/03.png",
 	},
 	{
-		resName: "McDonalds",
-		resLogo: "./images/01.png",
+		resLogo: "./images/04.png",
 	},
 	{
-		resName: "McDonalds",
-		resLogo: "./images/01.png",
+		resLogo: "./images/05.png",
 	},
 	{
-		resName: "McDonalds",
-		resLogo: "./images/01.png",
+		resLogo: "./images/06.png",
+	},
+	{
+		resLogo: "./images/07.png",
+	},
+	{
+		resLogo: "./images/08.png",
+	},
+	{
+		resLogo: "./images/09.png",
+	},
+	{
+		resLogo: "./images/10.png",
+	},
+	{
+		resLogo: "./images/11.png",
+	},
+	{
+		resLogo: "./images/12.png",
 	},
 ];

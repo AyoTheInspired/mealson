@@ -21,7 +21,7 @@ function PopularRestaurants() {
 					</div>
 					<Wrap className="flexed flex-wrap col mx-auto py-3">
 						{restaurants.map((restaurant, idx) => {
-							const { resName, resLogo } = restaurant;
+							const { resLogo } = restaurant;
 
 							return (
 								<img
