@@ -8,7 +8,7 @@ function Partners() {
 			<Row>
 				<Section className="flexed my-4 flex-wrap col-lg mx-auto px-2">
 					<div className="courier__wrap flexed flex-wrap mx-2 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
-						<div className="courier-text col flex-col align-items-start ">
+						<div className="courier__text col flex-col align-items-start ">
 							<h3 className="partners__title mb-3">Become a Courier</h3>
 							<p className="partners__summary">
 								Earn competitive salary as a delivery <br /> courier working
@@ -22,7 +22,7 @@ function Partners() {
 					</div>
 					{/*  */}
 					<div className="courier__wrap flexed flex-wrap mx-3 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
-						<div className="courier-text col flex-col align-items-start ">
+						<div className="courier__text col flex-col align-items-start">
 							<h3 className="partners__title mb-3">Become a Partner</h3>
 							<p className="partners__summary">
 								Grow your business by reaching <br /> new clients.
@@ -78,16 +78,17 @@ const Section = styled.section`
 	}
 
 	@media (max-width: 425px) {
-		/* .courier-text {
-			margin: 10px auto !important;
-		} */
 		.partners__title {
-			white-space: nowrap;
+			font-size: 25px;
+		}
+
+		.courier__text {
+			align-items: center !important;
 		}
 
 		.partners__title,
 		.partners__summary {
-			text-align: center;
+			text-align: center !important;
 		}
 
 		.partners__btn {

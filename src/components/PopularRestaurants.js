@@ -24,11 +24,13 @@ function PopularRestaurants() {
 							const { resName, resLogo } = restaurant;
 
 							return (
-								<img
-									src={resLogo}
-									alt={resLogo}
-									className="res__img w-25  p-3 mx-3 my-2"
-								/>
+								<a href="#" className="res__wrap">
+									<img
+										src={resLogo}
+										alt={resLogo}
+										className="res__img w-25  p-3 mx-3 my-2"
+									/>
+								</a>
 							);
 						})}
 					</Wrap>
@@ -52,16 +54,12 @@ const Section = styled.section`
 `;
 
 const Wrap = styled.div`
-	.res__wrap {
-		background: #fff;
-	}
-
-	.res__wrap:not(:last-child) {
-		margin-right: 5px;
-	}
-
 	.res__img {
 		width: 22% !important;
 		box-shadow: 0px 3px 12px #ddd;
+
+		@media (max-width: 450px) {
+			width: 80% !important;
+		}
 	}
 `;
