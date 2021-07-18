@@ -46,7 +46,7 @@ function Navigation() {
 				fixed="top"
 				className={`${fixedNav ? "py-2" : "py-3"}`}>
 				<Container className="">
-					<Navbar.Brand>
+					<Navbar.Brand className="mr-auto">
 						<img
 							src="./images/brand.png"
 							alt="site-logo"
