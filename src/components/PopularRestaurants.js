@@ -58,7 +58,7 @@ const Wrap = styled.div`
 		box-shadow: 0px 3px 12px #ddd;
 
 		@media (max-width: 450px) {
-			width: 80% !important;
+			width: 30% !important;
 			margin: 20px auto !important;
 		}
 	}
