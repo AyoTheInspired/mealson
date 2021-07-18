@@ -4,6 +4,7 @@ import Hero from ".//Hero";
 import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";
 import Partners from "./Partners";
+import PopularRestaurants from "./PopularRestaurants";
 
 function Home() {
 	return (
@@ -13,6 +14,7 @@ function Home() {
 			<TrendingFood />
 			<MobileSection />
 			<Partners />
+			<PopularRestaurants />
 		</div>
 	);
 }

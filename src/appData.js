@@ -92,3 +92,30 @@ export const menuItems = [
 		itemTitle: "Fruities",
 	},
 ];
+
+export const restaurants = [
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+	{
+		resName: "McDonalds",
+		resLogo: "./images/01.png",
+	},
+];
