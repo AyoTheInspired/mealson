@@ -14,7 +14,7 @@ function Hero() {
 					<Fade bottom>
 						<div className="hero__top">
 							<h4 className="mb-0 top__div-text text-white text-center">
-								ADD A SCROLLs TO TOP BUTTON #1 Food Delivery Service since 2010
+								#1 Food Delivery Service since 2010
 							</h4>
 						</div>
 					</Fade>

@@ -80,7 +80,7 @@ function Footer() {
 						})}
 					</FooterMid>
 
-					<FooterRight className="mt-3 mx-auto col-lg-3 col-md-4 col-sm-10 flex-col">
+					<FooterRight className="mt-3 mx-auto col-lg col-md-4 col-sm-10 flex-col">
 						<div className="footer__right-header mb-3">
 							<h5 className="footer__right-title mb-0 text-white">
 								Download our app
