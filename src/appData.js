@@ -131,3 +131,15 @@ export const restaurants = [
 		resLogo: "./images/12.png",
 	},
 ];
+
+export const customerReviews = [
+	{
+		cusName: "Adrian Lewis",
+		datePosted: "Dec 13, 2020",
+		cusImgSrc: "./images/users/Adrian.jpg",
+		reviewText:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi veniam beatae illo voluptatem est suscipit, consequuntur voluptatibus delectus temporibus quis? ",
+		totalStars: 5,
+		filledStars: 3,
+	},
+];

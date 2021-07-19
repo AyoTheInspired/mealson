@@ -5,6 +5,7 @@ import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";
 import Partners from "./Partners";
 import PopularRestaurants from "./PopularRestaurants";
+import UserReviews from "./UserReviews";
 
 function Home() {
 	return (
@@ -15,6 +16,7 @@ function Home() {
 			<MobileSection />
 			<Partners />
 			<PopularRestaurants />
+			<UserReviews />
 		</div>
 	);
 }
