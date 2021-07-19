@@ -3,7 +3,6 @@ import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { Dropdown } from "react-bootstrap";
 import { footerLeftData, footerMidData } from "../appData";
 import { FaTrademark } from "react-icons/fa";
 
@@ -11,10 +10,10 @@ function Footer() {
 	return (
 		<Container fluid>
 			<Row>
-				<FooterWrap className="my-4 col p-3">
+				<FooterWrap className="mt-4 col flexed px-2 py-4">
 					<FooterLeft className="col-lg-3 px-0 col-md-2 col-sm-10 flex-col text-white">
 						<div className="left__wrap flexed mb-3">
-							<h3 className="footer__left-title">Mealson</h3>
+							<h5 className="footer__left-title">Mealson</h5>
 							<span className="trademark">
 								<FaTrademark />
 							</span>
@@ -27,10 +26,9 @@ function Footer() {
 							placement="bottom"
 							arrow={false}
 							content={
-								<div className="footer__tip-wrap col">
+								<ol className="footer__tip-wrap col">
 									{footerLeftData.map((item, id) => {
 										const { flagSrc, name } = item;
-
 										return (
 											<li key={id} className="footer__left-item flexed my-2">
 												<img
@@ -43,7 +41,7 @@ function Footer() {
 											</li>
 										);
 									})}
-								</div>
+								</ol>
 							}>
 							<TitleWrap className="flexed">
 								<img
@@ -52,12 +50,36 @@ function Footer() {
 									className="footer__left-flag mr-2"
 									width="20"
 								/>
-								<span className="footer__left-text mr-1">NGN</span>
+								<span className="footer__left-text mr-1">NIG</span>
 								<IoMdArrowDropdown className="footer__left-arrow" />
 							</TitleWrap>
 						</Tippy>
 					</FooterLeft>
-					<FooterMid className="col-lg-5 col-md-7 col-sm-10"></FooterMid>
+					<FooterMid className="d-flex align-items-start justify-content-center col-lg-5 col-md-7 col-sm-10">
+						{footerMidData.map((item, id) => {
+							const { title, children } = item;
+
+							return (
+								<div
+									key={id + 1}
+									className="footer__mid-wrap d-flex flex-column mx-auto mt-2">
+									<h5 className="mb-3 footer__mid-title justify-content-start">
+										{title}
+									</h5>
+									{children.map((child, id) => {
+										return (
+											<a
+												key={id + 1}
+												className="footer__mid-item my-1"
+												href="#">
+												{child}
+											</a>
+										);
+									})}
+								</div>
+							);
+						})}
+					</FooterMid>
 					<FooterRight className="col-lg-3 col-md-2 col-sm-10"></FooterRight>
 				</FooterWrap>
 			</Row>
@@ -127,6 +149,26 @@ const TitleWrap = styled.div`
 	}
 `;
 
-const FooterMid = styled.div``;
+const FooterMid = styled.div`
+	.footer__mid-title {
+		color: #fff;
+		font-family: "Rubik", sans-serif;
+		font-size: 17px;
+		font-weight: bold;
+	}
+
+	.footer__mid-item {
+		color: #ffffffa6;
+		font-family: "Rubik", sans-serif;
+		font-size: 14px;
+		letter-spacing: 0.5px;
+		transition: var(--sht-trans);
+
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+`;
 
 const FooterRight = styled.div``;

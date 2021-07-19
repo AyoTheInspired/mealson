@@ -17,8 +17,8 @@ function Home() {
 			<MobileSection />
 			<Partners />
 			<PopularRestaurants />
-			<Footer />
 			<UserReviews />
+			<Footer />
 		</>
 	);
 }

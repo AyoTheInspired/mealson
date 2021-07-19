@@ -75,6 +75,7 @@ const Section = styled.section`
 	.reviews__header {
 		font-family: "Rubik", sans-serif;
 		font-size: 28px;
+		font-weight: bold;
 	}
 `;
 
