@@ -10,8 +10,8 @@ function Footer() {
 	return (
 		<Container fluid>
 			<Row>
-				<FooterWrap className="mt-4 col flexed px-2 py-4">
-					<FooterLeft className="col-lg-3 px-0 col-md-2 col-sm-10 flex-col text-white">
+				<FooterWrap className="mt-4 col flexed flex-wrap px-2 py-4">
+					<FooterLeft className="mt-3 mx-auto col-lg-3 px-0 col-md-2 col-sm-10 flex-col text-white">
 						<div className="left__wrap flexed mb-3">
 							<h5 className="footer__left-title">Mealson</h5>
 							<span className="trademark">
@@ -55,17 +55,16 @@ function Footer() {
 							</TitleWrap>
 						</Tippy>
 					</FooterLeft>
-					<FooterMid className="d-flex align-items-start justify-content-center col-lg-5 col-md-7 col-sm-10">
+
+					<FooterMid className="mt-3 mx-auto d-flex flex-wrap align-items-start justify-content-center col-lg-5 col-md-7 col-sm">
 						{footerMidData.map((item, id) => {
 							const { title, children } = item;
 
 							return (
 								<div
 									key={id + 1}
-									className="footer__mid-wrap d-flex flex-column mx-auto mt-2">
-									<h5 className="mb-3 footer__mid-title justify-content-start">
-										{title}
-									</h5>
+									className="footer__mid-wrap col-lg col-md col-sm-4 d-flex flex-column mx-auto mt-2">
+									<h5 className="mb-3 footer__mid-title">{title}</h5>
 									{children.map((child, id) => {
 										return (
 											<a
@@ -80,7 +79,28 @@ function Footer() {
 							);
 						})}
 					</FooterMid>
-					<FooterRight className="col-lg-3 col-md-2 col-sm-10"></FooterRight>
+
+					<FooterRight className="mt-3 mx-auto col-lg-3 col-md-4 col-sm-10 flex-col">
+						<div className="footer__right-header mb-3">
+							<h5 className="footer__right-title mb-0 text-white">
+								Download our app
+							</h5>
+						</div>
+						<div className="footer__right-icons col flexed">
+							<img
+								src="./images/gplay-badge.png"
+								alt="google-play"
+								width="120"
+								className="footer__badge mx-2"
+							/>
+							<img
+								src="./images/app-store.png"
+								alt="google-play"
+								width="120"
+								className="footer__badge mx-2"
+							/>
+						</div>
+					</FooterRight>
 				</FooterWrap>
 			</Row>
 		</Container>
@@ -171,4 +191,15 @@ const FooterMid = styled.div`
 	}
 `;
 
-const FooterRight = styled.div``;
+const FooterRight = styled.div`
+	.footer__right-header {
+		color: #fff;
+		font-family: "Rubik", sans-serif;
+		font-size: 17px;
+		font-weight: bold;
+	}
+
+	.footer__badge {
+		cursor: pointer;
+	}
+`;

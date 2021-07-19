@@ -10,7 +10,7 @@ function UserReviews() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="col my-5 py-3 px-3 flex-col">
+				<Section className="col mt-5 py-3 px-3 flex-col">
 					<div className="reviews__header">
 						<div className="mx-auto flex-col mt-2 mb-4 text-center">
 							<h3 className="reviews__header mb-0">Customer Reviews </h3>
