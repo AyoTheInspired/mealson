@@ -31,7 +31,7 @@ function UserReviews() {
 								<ReviewWrap
 									key={id}
 									className="col-lg-3 col-md-5 col-sm mx-auto my-2 flex-col text-white">
-									<div className="review__top py-2 px-3 align-items-start">
+									<div className="review__top align-items-start">
 										<StarRatingComponent
 											name={cusName}
 											starCount={5}
@@ -39,7 +39,9 @@ function UserReviews() {
 											editing={false}
 											className="mr-auto star__rating "
 										/>
-										<p className="mb-0 review__txt">{reviewText}</p>
+										<blockquote className="mb-0 review__txt">
+											{reviewText}
+										</blockquote>
 									</div>
 									<div className="review__bottom mt-4 flexed col">
 										<img
@@ -79,12 +81,17 @@ const Section = styled.section`
 const ReviewWrap = styled.div`
 	.review__top {
 		background: #fff;
+		padding: 12px 18px;
 		border-radius: 5px;
 		box-shadow: 1px 5px 8px #ddd;
 	}
 
 	.star__rating {
 		font-size: 20px;
+	}
+
+	.review__txt {
+		font-size: 15px;
 	}
 
 	.review__txt,

@@ -69,44 +69,39 @@ function TrendingFood() {
 								const { itemImgSrc, itemTitle } = menu;
 
 								return (
-									<>
-										<Card
-											key={id}
-											className="menu__card col-sm col-md-4 col-lg-3 m-3">
-											<div className="card__img-wrap">
-												<div className="meal__tray-wrap flexed">
-													<button
-														className="meal__tray-btn flexed"
-														onClick={(e) => {
-															setTrayClicked(true);
-															setTrayTitle(itemTitle);
-														}}>
-														<span className="meal__tray-icon mb-1 mr-1">
-															<BiDish />
-														</span>{" "}
-														<h6 className="mb-0 meal__tray-text">
-															Add to tray
-														</h6>
-													</button>
-												</div>
-												<Card.Img
-													className="card-img"
-													variant="top"
-													src={itemImgSrc}
-												/>
+									<Card
+										key={id}
+										className="menu__card col-sm-10 col-md-5 col-lg-3 m-3">
+										<div className="card__img-wrap">
+											<div className="meal__tray-wrap flexed">
+												<button
+													className="meal__tray-btn flexed"
+													onClick={(e) => {
+														setTrayClicked(true);
+														setTrayTitle(itemTitle);
+													}}>
+													<span className="meal__tray-icon mb-1 mr-1">
+														<BiDish />
+													</span>{" "}
+													<h6 className="mb-0 meal__tray-text">Add to tray</h6>
+												</button>
 											</div>
-											<Card.Body className="card__body py-2">
-												<Card.Title>
-													<Fade bottom>
-														<h5 className="mb-0 menu__title mt-2 text-center">
-															{" "}
-															{itemTitle}{" "}
-														</h5>
-													</Fade>
-												</Card.Title>
-											</Card.Body>
-										</Card>
-									</>
+											<Card.Img
+												className="card-img"
+												variant="top"
+												src={itemImgSrc}
+											/>
+										</div>
+										<Card.Body className="card__body py-2">
+											<Card.Title>
+												<Fade bottom>
+													<h5 className="mb-0 menu__title mt-2 text-center">
+														{itemTitle}
+													</h5>
+												</Fade>
+											</Card.Title>
+										</Card.Body>
+									</Card>
 								);
 							})}
 						</div>

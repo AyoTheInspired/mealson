@@ -8,7 +8,6 @@ import { Container, Row } from "react-bootstrap";
 
 function Hero() {
 	return (
-		// <HeroSection className="flexed hero__section">
 		<Container fluid>
 			<Row>
 				<Section className="hero__text-wrap mx-auto flex-col col">
@@ -61,7 +60,6 @@ function Hero() {
 				</Section>
 			</Row>
 		</Container>
-		// </HeroSection>
 	);
 }
 

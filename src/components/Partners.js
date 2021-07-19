@@ -6,8 +6,8 @@ function Partners() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="flexed my-4 flex-wrap col-lg mx-auto px-2">
-					<div className="courier__wrap flexed flex-wrap mx-2 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
+				<Section className="flexed my-4 flex-wrap col mx-auto px-2">
+					<div className="courier__wrap flexed flex-wrap mx-2 col-lg col-md-10 col-sm-10 py-4 my-3">
 						<div className="courier__text col flex-col align-items-start ">
 							<h3 className="partners__title mb-3">Become a Courier</h3>
 							<p className="partners__summary">
@@ -17,20 +17,20 @@ function Partners() {
 							<button className="partners__btn">Start earning</button>
 						</div>
 						<div className="courier__wrap-img">
-							<img src="./images/courier.png" alt="" className="" width="270" />
+							<img src="./images/courier.png" alt="" className="" width="250" />
 						</div>
 					</div>
 					{/*  */}
-					<div className="courier__wrap flexed flex-wrap mx-3 col-lg-5 col-md-10 col-sm-10 py-4 my-3">
+					<div className="courier__wrap flexed flex-wrap mx-3 col-lg col-md-10 col-sm-10 py-4 my-3">
 						<div className="courier__text col flex-col align-items-start">
 							<h3 className="partners__title mb-3">Become a Partner</h3>
 							<p className="partners__summary">
-								Grow your business by reaching <br /> new clients.
+								Grow your business by reaching new <br /> clients.
 							</p>
 							<button className="partners__btn">Partner with us</button>
 						</div>
 						<div className="courier__wrap-img">
-							<img src="./images/chef.png" alt="" className="" width="270" />
+							<img src="./images/chef.png" alt="" className="" width="250" />
 						</div>
 					</div>
 				</Section>
@@ -52,7 +52,8 @@ const Section = styled.section`
 
 	.partners__title {
 		font-family: "Rubik", sans-serif;
-		font-size: 32px;
+		font-size: 28px;
+		/* white-space: nowrap; */
 	}
 
 	.partners__summary {

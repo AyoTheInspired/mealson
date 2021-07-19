@@ -167,6 +167,28 @@ export const customerReviews = [
 	},
 ];
 
+export const footerLeftData = [
+	{
+		flagSrc: "./images/us.png",
+		name: "English",
+	},
+
+	{
+		flagSrc: "./images/fr.png",
+		name: "Francais",
+	},
+
+	{
+		flagSrc: "./images/de.png",
+		name: "Deutsch",
+	},
+
+	{
+		flagSrc: "./images/it.png",
+		name: "Italiano",
+	},
+];
+
 export const footerMidData = [
 	{
 		title: "Join Us",
