@@ -134,12 +134,35 @@ export const restaurants = [
 
 export const customerReviews = [
 	{
-		cusName: "Adrian Lewis",
+		cusName: "Ayo Abimbola",
 		datePosted: "Dec 13, 2020",
-		cusImgSrc: "./images/users/Adrian.jpg",
+		cusImgSrc: "./images/users/Ayo.jpg",
 		reviewText:
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi veniam beatae illo voluptatem est suscipit, consequuntur voluptatibus delectus temporibus quis? ",
-		totalStars: 5,
+		filledStars: 4,
+	},
+	{
+		cusName: "Laura Wilson",
+		datePosted: "Feb 05, 2020",
+		cusImgSrc: "./images/users/Ashley.jpg",
+		reviewText:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi veniam beatae illo voluptatem est suscipit, consequuntur voluptatibus delectus temporibus quis? ",
+		filledStars: 5,
+	},
+	{
+		cusName: "Mary Alice Grant",
+		datePosted: "Apr 14, 2020",
+		cusImgSrc: "./images/users/Alice.jpg",
+		reviewText:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi veniam beatae illo voluptatem est suscipit, consequuntur voluptatibus delectus temporibus quis? ",
 		filledStars: 3,
+	},
+	{
+		cusName: "Adrian Lewis",
+		datePosted: "Dec 13, 2020",
+		cusImgSrc: "./images/users/Richard.jpg",
+		reviewText:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi veniam beatae illo voluptatem est suscipit, consequuntur voluptatibus delectus temporibus quis? ",
+		filledStars: 2,
 	},
 ];
