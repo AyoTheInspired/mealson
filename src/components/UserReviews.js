@@ -107,4 +107,9 @@ const ReviewWrap = styled.div`
 		font-weight: 300;
 		color: #7d879c;
 	}
+
+	@media (max-width: 450px) {
+		border-bottom: 1px solid var(--mild-gry);
+		padding-bottom: 12px;
+	}
 `;

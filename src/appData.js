@@ -166,3 +166,20 @@ export const customerReviews = [
 		filledStars: 2,
 	},
 ];
+
+export const footerMidData = [
+	{
+		title: "Join Us",
+		children: ["Careers", "Restaurants", "Become a Courier", "About"],
+	},
+
+	{
+		title: "Let us help you",
+		children: ["Help Center", "Support", "Contact"],
+	},
+
+	{
+		title: "Follow Us",
+		children: ["Facebook", "Twitter", "Instagram"],
+	},
+];

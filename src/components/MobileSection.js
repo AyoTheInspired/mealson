@@ -92,4 +92,15 @@ export const Section = styled.section`
 		font-size: 15px;
 		font-weight: bold;
 	}
+
+	@media (max-width: 450px) {
+		.order__top,
+		.order__mid {
+			text-align: center;
+		}
+
+		.store__img {
+			margin: 2px auto !important;
+		}
+	}
 `;
