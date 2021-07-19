@@ -55,7 +55,8 @@ const Wrap = styled.div`
 	.res__img {
 		cursor: pointer;
 		width: 22% !important;
-		box-shadow: 0px 3px 12px #ddd;
+		box-shadow: 1px 3px 12px #ddd;
+		border-radius: 5px;
 
 		@media (max-width: 450px) {
 			width: 40% !important;
