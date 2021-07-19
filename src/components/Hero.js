@@ -11,6 +11,12 @@ function Hero() {
 		<Container fluid>
 			<Row>
 				<Section className="hero__text-wrap mx-auto flex-col col">
+					<div className="mx-auto mb-3">
+						<h5 className="notify bg-light p-2">
+							Please note that this site is still undergoing some minor updates.
+						</h5>
+					</div>
+
 					<Fade bottom>
 						<div className="hero__top">
 							<h4 className="mb-0 top__div-text text-white text-center">
@@ -120,5 +126,9 @@ const Section = styled.section`
 		font-family: "Rubik", sans-serif;
 		font-size: 14px;
 		font-weight: normal;
+	}
+
+	.notify {
+		color: var(--deep-hvr);
 	}
 `;
