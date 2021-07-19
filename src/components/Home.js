@@ -6,10 +6,11 @@ import MobileSection from "./MobileSection";
 import Partners from "./Partners";
 import PopularRestaurants from "./PopularRestaurants";
 import UserReviews from "./UserReviews";
+import Footer from "./Footer";
 
 function Home() {
 	return (
-		<div>
+		<>
 			<Navigation />
 			<Hero />
 			<TrendingFood />
@@ -17,7 +18,8 @@ function Home() {
 			<Partners />
 			<PopularRestaurants />
 			<UserReviews />
-		</div>
+			<Footer />
+		</>
 	);
 }
 
