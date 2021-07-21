@@ -29,7 +29,7 @@ export const navItems = [
 	{
 		itemIcon: <BiDish />,
 		itemName: "Cuisine",
-		itemUrl: "/cuisine",
+		itemUrl: "#",
 		hoverItems: [
 			{
 				cuisineSource: "./images/burger.svg",

@@ -15,13 +15,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { navItems } from "../appData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
-import RegModal from "./RegModal";
 
 function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
-	const [showModal, setShowModal] = useState(false);
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY >= 100) {
@@ -88,6 +86,7 @@ function Navigation() {
 											<span className="nav__icon mb-1 mr-1"> {itemIcon} </span>
 
 											<Tippy
+												trigger={searchClicked ? "click" : "mouseenter focus"}
 												interactive
 												arrow={false}
 												className="flexed"
@@ -100,7 +99,7 @@ function Navigation() {
 																<div key={id + 1} className="">
 																	{dropdown ? (
 																		<div className="single__cuisine-wrap">
-																			<h6 className="text-center single__cuisine-title p-1">
+																			<h6 className="text-center single__cuisine-title p-1 my-2">
 																				{" "}
 																				{item}{" "}
 																			</h6>
@@ -246,6 +245,10 @@ const StyledNavbar = styled(Navbar)`
 		font-size: 12px;
 	}
 
+	.nav__right-icon {
+		color: #fff;
+	}
+
 	.nav__right-icon:active {
 		border: none !important;
 		outline: none !important;
@@ -261,7 +264,12 @@ const StyledNavbar = styled(Navbar)`
 		&:hover {
 			color: #fff;
 			background: #000;
-			background: var(--deep-hvr);
+			background: var(--mdl-lbl);
+		}
+
+		&:hover .large__cuisine-title {
+			color: #fff;
+			text-decoration: none;
 		}
 	}
 
@@ -276,6 +284,7 @@ const StyledNavbar = styled(Navbar)`
 	& .large__cuisine-title {
 		font-size: 12px;
 		margin-top: 3px;
+		color: var(--mdl-lbl);
 	}
 
 	& .soon__text {
@@ -344,10 +353,10 @@ const StyledNavbar = styled(Navbar)`
 			}
 		}
 
-		.large__cuisine-wrap {
+		/* .large__cuisine-wrap {
 			display: flex;
 			flex-direction: row !important;
-		}
+		} */
 	}
 `;
 
