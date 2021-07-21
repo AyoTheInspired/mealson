@@ -39,7 +39,11 @@ function UserLogin() {
 			<Form.Group
 				controlId="formBasicCheckbox"
 				className="d-flex justify-content-between">
-				<Form.Check type="checkbox" className="flexed" label="Remember Me" />
+				<Form.Check
+					type="checkbox"
+					className="flexed reg__form-rem"
+					label="Remember Me"
+				/>
 				<a href="#" className="mb-0 reg__form-fpwd" rel="noreferrer noopener">
 					Forgot Password?
 				</a>

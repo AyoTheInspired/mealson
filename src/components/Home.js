@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "./Navigation";
 import Hero from ".//Hero";
 import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";
@@ -12,7 +11,6 @@ import ScrollIcon from "./ScrollIcon";
 function Home() {
 	return (
 		<>
-			<Navigation />
 			<Hero />
 			<TrendingFood />
 			<MobileSection />

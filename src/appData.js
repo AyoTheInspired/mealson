@@ -1,5 +1,5 @@
 import { BiDish } from "react-icons/bi";
-import { FaTruck } from "react-icons/fa";
+import { FaTruck, FaHome } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { BsQuestionCircle } from "react-icons/bs";
 
@@ -7,6 +7,7 @@ export const navItems = [
 	{
 		itemIcon: <FiMapPin />,
 		itemName: "Lagos",
+		itemUrl: "#",
 		dropdown: true,
 		hoverItems: [
 			"Los Angeles",
@@ -20,12 +21,20 @@ export const navItems = [
 	},
 
 	{
+		itemIcon: <FaHome />,
+		itemName: "Home",
+		itemUrl: "/home",
+	},
+
+	{
 		itemIcon: <BiDish />,
 		itemName: "Cuisine",
+		itemUrl: "/cuisine",
 		hoverItems: [
 			{
 				cuisineSource: "./images/burger.svg",
 				cuisineName: "Burgers & Fries",
+				// cuisineUrl: "/cuisines",
 			},
 			{
 				cuisineSource: "./images/noodles.svg",
@@ -49,7 +58,7 @@ export const navItems = [
 			},
 			{
 				cuisineSource: "./images/healthy.svg",
-				cuisineName: "Healthy Food",
+				cuisineName: "Fruities",
 			},
 		],
 	},
@@ -57,12 +66,14 @@ export const navItems = [
 	{
 		itemIcon: <FaTruck />,
 		itemName: "Orders",
+		itemUrl: "#",
 		dropdown: false,
 	},
 
 	{
 		itemIcon: <BsQuestionCircle />,
 		itemName: "Learn More",
+		itemUrl: "#",
 	},
 ];
 

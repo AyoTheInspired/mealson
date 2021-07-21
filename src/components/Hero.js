@@ -28,7 +28,7 @@ function Hero() {
 					<Fade left>
 						<div className="hero__mid mt-4 mb-5">
 							<h2 className="major-text mb-0 text-center text-white">
-								We deliver your favorite food <br /> fresh & fast in{" "}
+								We deliver your favorite meal, <br /> fresh & fast in{" "}
 								<Tippy
 									interactive
 									trigger="click"

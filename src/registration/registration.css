@@ -61,7 +61,6 @@
 
 .reg__form-icon {
 	color: #fff;
-	/* background: red ; */
 }
 
 .reg__form-fpwd {
@@ -94,4 +93,25 @@
 .form__icon-btn {
 	border: 0 !important;
 	box-shadow: none !important;
+}
+
+@media screen and (max-width: 450px) {
+	.modal__item-text,
+	.reg__form-btn {
+		font-size: 15px;
+		white-space: nowrap;
+	}
+
+	.reg__form-label {
+		font-size: 14px;
+	}
+
+	.reg__form-input::placeholder {
+		font-size: 14px;
+	}
+
+	.reg__form-fpwd,
+	.reg__form-rem {
+		font-size: 12px;
+	}
 }

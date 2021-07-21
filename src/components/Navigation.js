@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -42,15 +43,15 @@ function Navigation() {
 		<>
 			<StyledNavbar
 				expand="lg"
+				sticky="top"
 				bg="dark"
-				fixed="top"
 				className={`${fixedNav ? "py-2" : "py-3"}`}>
 				<Container className="">
 					<Navbar.Brand className="mr-auto">
 						<img
 							src="./images/brand.png"
 							alt="site-logo"
-							className="site__brand mr-4"
+							className="site__brand text-white mr-4"
 							height="30"
 							width="30"
 						/>
@@ -77,10 +78,14 @@ function Navigation() {
 						<Nav className="nav-wrapper ">
 							<div className="nav__left flexed">
 								{navItems.map((item, id) => {
-									const { itemIcon, itemName, dropdown, hoverItems } = item;
+									const { itemIcon, itemName, itemUrl, dropdown, hoverItems } =
+										item;
 									return (
-										<div className="nav__item-wrap flexed mx-2" key={id}>
-											<span className="nav__icon mb-1"> {itemIcon} </span>
+										<div
+											to={itemUrl}
+											className="nav__item-wrap flexed mx-2"
+											key={id}>
+											<span className="nav__icon mb-1 mr-1"> {itemIcon} </span>
 
 											<Tippy
 												interactive
@@ -88,8 +93,9 @@ function Navigation() {
 												className="flexed"
 												content={
 													hoverItems ? (
-														hoverItems.map((item, index) => {
-															const { cuisineName, cuisineSource } = item;
+														hoverItems.map((item, id) => {
+															const { cuisineName, cuisineUrl, cuisineSource } =
+																item;
 															return (
 																<div key={id + 1} className="">
 																	{dropdown ? (
@@ -109,9 +115,11 @@ function Navigation() {
 																					width="25"
 																					height="25"
 																				/>
-																				<h6 className="large__cuisine-title">
+																				<Link
+																					to={`/cuisines/${cuisineName}`}
+																					className="large__cuisine-title">
 																					{cuisineName}
-																				</h6>
+																				</Link>
 																			</div>
 																		</div>
 																	)}
@@ -119,24 +127,26 @@ function Navigation() {
 															);
 														})
 													) : (
-														<h6 className="mb-0 soon__text">Coming Soon</h6>
+														<h6 className="mb-0 soon__text"> {itemName} </h6>
 													)
 												}>
-												<Nav.Link className="nav__link">{itemName}</Nav.Link>
+												<NavLink to={itemUrl} className="nav__link">
+													{itemName}
+												</NavLink>
 											</Tippy>
-											{dropdown && <IoMdArrowDropdown />}
+											{dropdown && <IoMdArrowDropdown className="ml-1" />}
 										</div>
 									);
 								})}
 							</div>
-							<button
-								className="mx-auto d-lg-none px-3 py-1 my-2 w-50"
-								onClick={() => setShowModal(true)}>
+							<Link
+								to="/register"
+								className="w-50 mx-auto d-lg-none px-3 py-1 acct__btn">
 								Account
-							</button>
+							</Link>
 						</Nav>
 						{searchClicked && (
-							<div className="nav__form-wrap mr-2">
+							<div className="nav__form-wrap mr-2 mt-2">
 								<InputGroup className="pl-3">
 									<InputGroup.Prepend>
 										<InputGroup.Text className="nav__form__icon-wrap">
@@ -165,19 +175,17 @@ function Navigation() {
 								</StyledReactTooltip>
 							</div>
 							<div className="nav__right-item">
-								<AiOutlineUser
-									className="nav__right-icon"
-									data-tip
-									data-for="account"
-									onClick={() => setShowModal(!showModal)}
-								/>
+								<Link to="/register">
+									<AiOutlineUser
+										className="nav__right-icon"
+										data-tip
+										data-for="account"
+									/>
+								</Link>
 								<StyledReactTooltip id="account" place="right" effect="solid">
 									<p className="nav__right-tooltip mb-0 p-0">Account</p>
 								</StyledReactTooltip>
 							</div>
-							{showModal && (
-								<RegModal showModal={showModal} setShowModal={setShowModal} />
-							)}
 						</div>
 					</Navbar.Collapse>
 				</Container>
@@ -189,8 +197,6 @@ function Navigation() {
 export default Navigation;
 
 const StyledNavbar = styled(Navbar)`
-	/* position: ${(searchClicked) => (searchClicked ? "fixed" : null)}; */
-
 	& .nav__item-wrap:first-child {
 		border-right: 1px solid gray;
 		padding-right: 10px;
@@ -200,23 +206,26 @@ const StyledNavbar = styled(Navbar)`
 		${(searchClicked) =>
 			searchClicked
 				? {
-						width: "40%",
+						width: "30%",
 				  }
 				: null};
 	}
 
 	.nav__link {
 		white-space: nowrap;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	& .nav__item-wrap,
 	& .nav__link {
 		font-size: 17px;
-		color: #fff !important;
+		color: #fff;
 		transition: var(--sht-trans);
 
-		&:hover,
-		&:active {
+		&:hover {
 			color: var(--nav-hvr) !important;
 		}
 	}
@@ -316,6 +325,23 @@ const StyledNavbar = styled(Navbar)`
 
 		.nav__icon {
 			margin-right: 7px;
+		}
+
+		.acct__btn {
+			padding: 10px 22px;
+			border: 1px solid #fff;
+			border-radius: 5px;
+			margin: 10px;
+			text-align: center;
+			color: #fff;
+			font-size: 18px;
+			background: var(--nav-hvr);
+			transition: var(--sht-trans);
+
+			&:hover {
+				background: var(--deep-hvr);
+				text-decoration: none;
+			}
 		}
 
 		.large__cuisine-wrap {

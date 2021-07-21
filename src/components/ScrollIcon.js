@@ -22,7 +22,7 @@ function ScrollIcon() {
 
 	return (
 		<Wrap className={showScroll ? "active" : null}>
-			<div onClick={scrollTop} className="icon__wrapper Flexed">
+			<div onClick={scrollTop} className="icon__wrapper flexed">
 				<FaChevronUp className="scroll__icon" />
 			</div>
 		</Wrap>
@@ -34,7 +34,7 @@ export default ScrollIcon;
 const Wrap = styled.div`
 	position: fixed;
 	bottom: 800px;
-	right: 30px;
+	right: 10px;
 	z-index: 200;
 	opacity: 0;
 	transition: all 0.5s linear;
@@ -46,7 +46,7 @@ const Wrap = styled.div`
 
 	.icon__wrapper {
 		box-shadow: 0px 1px 5px #000;
-		padding: 15px;
+		padding: 10px;
 		background: var(--deep-hvr);
 		border-radius: 50%;
 		cursor: pointer;

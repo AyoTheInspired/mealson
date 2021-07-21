@@ -10,7 +10,7 @@ function Footer() {
 	return (
 		<Container fluid>
 			<Row>
-				<FooterWrap className="mt-4 col flexed flex-wrap px-2 py-4">
+				<FooterWrap className="mt-4 col-lg flexed flex-wrap px-2 py-4">
 					<FooterLeft className="mt-3 mx-auto col-lg-3 px-0 col-md-2 col-sm-10 flex-col text-white">
 						<div className="left__wrap flexed mb-3">
 							<h5 className="footer__left-title">Mealson</h5>
@@ -56,7 +56,7 @@ function Footer() {
 						</Tippy>
 					</FooterLeft>
 
-					<FooterMid className="mt-3 mx-auto d-flex flex-wrap align-items-start justify-content-center col-lg-5 col-md-7 col-sm">
+					<FooterMid className="mt-3 mx-auto d-flex flex-wrap align-items-start justify-content-center col-lg-6 col-md-7 col-sm">
 						{footerMidData.map((item, id) => {
 							const { title, children } = item;
 
@@ -80,7 +80,7 @@ function Footer() {
 						})}
 					</FooterMid>
 
-					<FooterRight className="mt-3 mx-auto col-lg col-md-4 col-sm-10 flex-col">
+					<FooterRight className="mt-3 mr-auto col-lg col-md-4 col-sm-10 flex-col">
 						<div className="footer__right-header mb-3">
 							<h5 className="footer__right-title mb-0 text-white">
 								Download our app
