@@ -115,7 +115,7 @@ function Navigation() {
 																					height="25"
 																				/>
 																				<Link
-																					to={`/cuisines/${cuisineName}`}
+																					// to={`/cuisines/${cuisineName}`}
 																					className="large__cuisine-title">
 																					{cuisineName}
 																				</Link>

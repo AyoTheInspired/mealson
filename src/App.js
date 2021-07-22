@@ -16,7 +16,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/home" component={Home} />
-					<Route exact path="/cuisines/:cuisineName" component={Cuisines} />
+					{/* <Route exact path="/cuisines/:cuisineName" component={Cuisines} /> */}
 					<Route exact path="/register" component={RegModal} />
 				</Switch>
 				{/* <Home /> */}
