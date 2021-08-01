@@ -5,7 +5,8 @@ export const initialState = {
 
 export const actionTypes = {
 	OPEN_DYNAMICS: "OPEN_DYNAMICS",
-	CUSINE_CLOSED: "CUSINE_CLOSED",
+	CLOSE_DYNAMICS: "CLOSE_DYNAMICS",
+	// CUSINE_CLOSED: "CUSINE_CLOSED",
 	SET_CUISINE: "SET_CUISINE",
 };
 
@@ -16,6 +17,12 @@ const reducer = (state, action) => {
 				...state,
 				cuisineClicked: true,
 				cuisineItem: action.payload,
+			};
+
+		case actionTypes.CLOSE_DYNAMICS:
+			return {
+				...state,
+				cuisineClicked: false,
 			};
 
 		case actionTypes.SET_CUISINE:

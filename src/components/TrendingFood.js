@@ -16,9 +16,9 @@ function TrendingFood() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="trending__wrap px-0">
+				<Section className="trending__wrap px-0" id="dynamics">
 					{cuisineClicked && (
-						<div className="col bg-dark p-3 dynamics__wrapper flexed">
+						<div className="col bg-dark p-3 dynamics__wrapper flexed mt-5">
 							<h2 className="text-white text-center mb-0">DYNAMICS SECTION</h2>
 						</div>
 					)}

@@ -109,7 +109,14 @@ function Navigation() {
 																		</div>
 																	) : (
 																		<div className="large__cuisine-wrap px-2">
-																			<div className="flex-col my-1">
+																			<div
+																				className="flex-col my-1"
+																				onClick={() =>
+																					dispatch({
+																						type: actionTypes.OPEN_DYNAMICS,
+																						payload: cuisineName,
+																					})
+																				}>
 																				<img
 																					src={cuisineSource}
 																					alt="cuisine__icon"
@@ -117,14 +124,7 @@ function Navigation() {
 																					width="25"
 																					height="25"
 																				/>
-																				<h6
-																					className="large__cuisine-title"
-																					onClick={() =>
-																						dispatch({
-																							type: actionTypes.OPEN_DYNAMICS,
-																							payload: cuisineName,
-																						})
-																					}>
+																				<h6 className="large__cuisine-title">
 																					{cuisineName}
 																				</h6>
 																			</div>

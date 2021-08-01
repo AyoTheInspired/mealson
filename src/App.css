@@ -19,6 +19,10 @@
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .flexed {
 	display: flex;
 	justify-content: center;
