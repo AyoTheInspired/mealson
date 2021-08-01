@@ -134,10 +134,6 @@ const FooterLeft = styled.div`
 		cursor: pointer;
 		transition: var(--sht-trans);
 
-		&:hover {
-			padding-left: 10px;
-		}
-
 		&:hover .footer__left-name {
 			color: var(--nav-hvr);
 		}
