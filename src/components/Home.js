@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Hero from ".//Hero";
 import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";
@@ -8,6 +8,8 @@ import UserReviews from "./UserReviews";
 import Footer from "./Footer";
 
 function Home() {
+	const dynamicsSection = useRef(null);
+
 	return (
 		<>
 			<Hero />
