@@ -37,7 +37,7 @@ function TrendingFood() {
 						{trayClicked && (
 							<ToastContainer
 								position="top-center"
-								className="toast__wrap p-5 col">
+								className="toast__wrap p-5 col-lg-6">
 								<Toast
 									onClose={() => setTrayClicked(false)}
 									show={trayClicked}
