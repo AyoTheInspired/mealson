@@ -15,11 +15,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { navItems } from "../appData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { useStateValue } from "../global-state/StateProvider";
+import { actionTypes } from "../global-state/reducer";
 
 function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
+	const [cuisineItem, dispatch] = useStateValue();
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY >= 100) {
@@ -114,11 +117,16 @@ function Navigation() {
 																					width="25"
 																					height="25"
 																				/>
-																				<Link
-																					// to={`/cuisines/${cuisineName}`}
-																					className="large__cuisine-title">
+																				<h6
+																					className="large__cuisine-title"
+																					onClick={() =>
+																						dispatch({
+																							type: actionTypes.OPEN_DYNAMICS,
+																							payload: cuisineName,
+																						})
+																					}>
 																					{cuisineName}
-																				</Link>
+																				</h6>
 																			</div>
 																		</div>
 																	)}

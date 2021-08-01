@@ -5,15 +5,23 @@ import { Container, Row, Card, Toast } from "react-bootstrap";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 import { BiDish } from "react-icons/bi";
+import { useStateValue } from "../global-state/StateProvider";
+import actionTypes from "../global-state/reducer";
 
 function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
+	const [{ cuisineClicked }, dispatch] = useStateValue();
 
 	return (
 		<Container fluid>
 			<Row>
 				<Section className="trending__wrap px-0">
+					{cuisineClicked && (
+						<div className="col bg-dark p-3 dynamics__wrapper flexed">
+							<h2 className="text-white text-center mb-0">DYNAMICS SECTION</h2>
+						</div>
+					)}
 					<Slide bottom>
 						<div className="trending__header">
 							<div className="mx-auto flex-col mt-5 mb-4 text-center">
@@ -214,6 +222,10 @@ const Section = styled.section`
 
 	.tray__title {
 		color: var(--nav-hvr);
+	}
+
+	.dynamics__wrapper {
+		min-height: 300px;
 	}
 `;
 

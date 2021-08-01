@@ -5,8 +5,10 @@ import "tippy.js/dist/tippy.css"; // optional
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Container, Row } from "react-bootstrap";
+import { useStateValue } from "../global-state/StateProvider";
 
 function Hero() {
+	const [{ cuisineItem }] = useStateValue();
 	return (
 		<Container fluid>
 			<Row>
@@ -15,6 +17,10 @@ function Hero() {
 						<h5 className="notify bg-light p-2 text-center">
 							Please note that this site is still undergoing some minor updates.
 						</h5>
+
+						<h3 className="bg-success text-white ml-auto">
+							The cuisine item is {cuisineItem}
+						</h3>
 					</div>
 
 					<Fade bottom>
