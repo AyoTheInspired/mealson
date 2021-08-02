@@ -18,9 +18,9 @@ function Hero() {
 							Please note that this site is still undergoing some minor updates.
 						</h5>
 
-						<h3 className="bg-success text-white ml-auto">
+						{/* <h3 className="bg-success text-white ml-auto">
 							The cuisine item is {cuisineItem}
-						</h3>
+						</h3> */}
 					</div>
 
 					<Fade bottom>
@@ -31,34 +31,32 @@ function Hero() {
 						</div>
 					</Fade>
 
-					<Fade left>
-						<div className="hero__mid mt-4 mb-5">
-							<h2 className="major-text mb-0 text-center text-white">
-								We deliver your favorite meal, <br /> fresh & fast in{" "}
-								<Tippy
-									interactive
-									trigger="click"
-									placement="right"
-									arrow={false}
-									content={
-										<div className="hero__tip-wrap">
-											<h6 className="mb-0 hero__tip-item p-2">Los Angeles</h6>
-											<h6 className="mb-0 hero__tip-item p-2">Chicago</h6>
-											<h6 className="mb-0 hero__tip-item p-2">Houston</h6>
-											<h6 className="mb-0 hero__tip-item p-2">Philadelphia</h6>
-											<h6 className="mb-0 hero__tip-item p-2">San Diego</h6>
-											<h6 className="mb-0 hero__tip-item p-2">Miami</h6>
-											<h6 className="mb-0 hero__tip-item p-2">New York</h6>
-										</div>
-									}>
-									<span className="hero__dropdown">
-										Lagos
-										<IoMdArrowDropdown />{" "}
-									</span>
-								</Tippy>
-							</h2>
-						</div>
-					</Fade>
+					<div className="hero__mid mt-4 mb-5">
+						<h2 className="major-text mb-0 text-center text-white">
+							We deliver your favorite meal, <br /> fresh & fast in
+							<Tippy
+								interactive
+								trigger="click"
+								placement="right"
+								arrow={false}
+								content={
+									<div className="hero__tip-wrap">
+										<h6 className="mb-0 hero__tip-item p-2">Los Angeles</h6>
+										<h6 className="mb-0 hero__tip-item p-2">Chicago</h6>
+										<h6 className="mb-0 hero__tip-item p-2">Houston</h6>
+										<h6 className="mb-0 hero__tip-item p-2">Philadelphia</h6>
+										<h6 className="mb-0 hero__tip-item p-2">San Diego</h6>
+										<h6 className="mb-0 hero__tip-item p-2">Miami</h6>
+										<h6 className="mb-0 hero__tip-item p-2">New York</h6>
+									</div>
+								}>
+								<span className="hero__dropdown">
+									Lagos
+									<IoMdArrowDropdown />{" "}
+								</span>
+							</Tippy>
+						</h2>
+					</div>
 
 					<Fade right>
 						<div className="hero__third">

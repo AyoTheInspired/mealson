@@ -14,7 +14,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<Navigation />
-				{/* <ScrollIcon /> */}
+				<ScrollIcon />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/home" component={Home} />

@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import styled from "styled-components";
 
 function ScrollIcon() {
 	const [showScroll, setShowScroll] = useState(false);
-
-	window.addEventListener("scroll", () => {
-		if (window.scrollY >= 300) {
-			setShowScroll(true);
-		} else {
-			setShowScroll(false);
-		}
-	});
 
 	function scrollTop() {
 		window.scrollTo({
@@ -19,6 +11,20 @@ function ScrollIcon() {
 			behavior: "smooth",
 		});
 	}
+
+	const listener = function () {
+		if (window.scrollY >= 300) {
+			setShowScroll(true);
+		} else {
+			setShowScroll(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", listener);
+
+		return window.removeEventListener("scroll", listener);
+	}, [showScroll]);
 
 	return (
 		<Wrap className={showScroll ? "active" : null}>
@@ -40,7 +46,7 @@ const Wrap = styled.div`
 	transition: all 0.5s linear;
 
 	&.active {
-		bottom: 30px;
+		bottom: 30px !important;
 		opacity: 1;
 	}
 
