@@ -9,7 +9,7 @@ import { useStateValue } from "../global-state/StateProvider";
 import actionTypes from "../global-state/reducer";
 import { FaTimes } from "react-icons/fa";
 
-function TrendingFood() {
+function TrendingFood({ ref }) {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
 	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
@@ -17,7 +17,7 @@ function TrendingFood() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="trending__wrap px-0" id="dynamics">
+				<Section ref={ref} className="trending__wrap px-0">
 					{cuisineClicked && (
 						<div className="col bg-dark p-4 dynamics__wrapper mt-5">
 							<div className="dynamics__header col-lg ml-auto d-flex justify-content-between align-items-center">
@@ -36,7 +36,7 @@ function TrendingFood() {
 						</div>
 					)}
 					<Slide bottom>
-						<div className="trending__header">
+						<div className="trending__header" id="trending">
 							<div className="mx-auto flex-col mt-5 mb-4 text-center">
 								<h3 className="trending__header-large">
 									Trending food in your city

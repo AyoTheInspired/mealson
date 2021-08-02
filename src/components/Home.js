@@ -8,10 +8,12 @@ import UserReviews from "./UserReviews";
 import Footer from "./Footer";
 
 function Home() {
+	const trendingRef = useRef(null);
+
 	return (
 		<>
-			<Hero />
-			<TrendingFood />
+			<Hero ref={trendingRef} />
+			<TrendingFood ref={trendingRef} />
 			<MobileSection />
 			<Partners />
 			<PopularRestaurants />

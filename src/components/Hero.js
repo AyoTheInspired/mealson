@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 // import "tippy.js/dist/tippy.css"; // optional
+import { Link } from "react-scroll";
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../global-state/StateProvider";
 import { locationItems } from "../appData";
 
-function Hero() {
+function Hero(props, ref) {
 	const [{ cuisineItem }] = useStateValue();
 	const [location, setLocation] = useState("Lagos");
 
@@ -67,9 +68,9 @@ function Hero() {
 					<Fade right>
 						<div className="hero__third">
 							<button className="hero__btn">
-								<h5 className="mb-0 hero__btn-text">
+								<Link to="trending" offset={40} className="mb-0 hero__btn-text">
 									What would you like to eat?
-								</h5>
+								</Link>
 							</button>
 						</div>
 					</Fade>
@@ -79,7 +80,7 @@ function Hero() {
 	);
 }
 
-export default Hero;
+export default forwardRef(Hero);
 
 const Section = styled.section`
 	min-height: 100vh;
@@ -121,7 +122,6 @@ const Section = styled.section`
 		outline: none;
 		border: none;
 		background: var(--nav-hvr);
-		color: #fff;
 		padding: 10px 22px;
 		border-radius: 5px;
 
@@ -133,6 +133,8 @@ const Section = styled.section`
 	}
 
 	& .hero__btn-text {
+		color: #fff;
+		text-decoration: none;
 		font-family: "Rubik", sans-serif;
 		font-size: 14px;
 		font-weight: normal;

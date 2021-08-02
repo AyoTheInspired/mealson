@@ -8,7 +8,7 @@ import ScrollIcon from "./components/ScrollIcon";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-	const dynamicsSection = useRef(null);
+	// const trendingRef = useRef(null);
 
 	return (
 		<Router>
