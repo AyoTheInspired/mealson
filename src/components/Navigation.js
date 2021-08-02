@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import { Link as ScrollLink } from "react-scroll";
 import {
 	Navbar,
 	Nav,
@@ -124,7 +125,9 @@ function Navigation() {
 																		</div>
 																	) : (
 																		<div className="large__cuisine-wrap px-2">
-																			<div
+																			<ScrollLink
+																				to="dynamics"
+																				offset={-62}
 																				className="flex-col my-1"
 																				onClick={() =>
 																					dispatch({
@@ -142,7 +145,7 @@ function Navigation() {
 																				<h6 className="large__cuisine-title">
 																					{cuisineName}
 																				</h6>
-																			</div>
+																			</ScrollLink>
 																		</div>
 																	)}
 																</div>

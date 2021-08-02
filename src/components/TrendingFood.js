@@ -17,9 +17,9 @@ function TrendingFood({ ref }) {
 	return (
 		<Container fluid>
 			<Row>
-				<Section ref={ref} className="trending__wrap px-0">
+				<Section id="dynamics" className="trending__wrap px-0">
 					{cuisineClicked && (
-						<div className="col bg-dark p-4 dynamics__wrapper mt-5">
+						<div className="col bg-dark p-4 dynamics__wrapper">
 							<div className="dynamics__header col-lg ml-auto d-flex justify-content-between align-items-center">
 								<img src="/images/brand.png" width="40" alt="" />
 								<h3 className="text-white text-center mb-0 dynamics__header-text">
@@ -28,9 +28,7 @@ function TrendingFood({ ref }) {
 										{cuisineItem?.toUpperCase()}
 									</span>
 								</h3>
-								{/* <div className="dynamics__close-wrap p-3"> */}
 								<FaTimes className="dynamics__header-close" />
-								{/* </div> */}
 							</div>
 							<div className="underline-sm"></div>
 						</div>
