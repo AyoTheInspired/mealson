@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { menuItems } from "../appData";
 import { Container, Row, Card, Toast } from "react-bootstrap";
@@ -9,10 +9,25 @@ import { useStateValue } from "../global-state/StateProvider";
 import actionTypes from "../global-state/reducer";
 import { FaTimes } from "react-icons/fa";
 
-function TrendingFood({ ref }) {
+function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
 	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
+
+	const API_KEY = "f81207052edb439981703a89b22f0297";
+
+	useEffect(() => {
+		const getCuisines = () => {
+			fetch(
+				`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}`
+			).then((response) =>
+				response.json().then((data) => {
+					console.log(data);
+				})
+			);
+		};
+		getCuisines();
+	});
 
 	return (
 		<Container fluid>
