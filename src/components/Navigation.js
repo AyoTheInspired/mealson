@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
@@ -22,15 +22,31 @@ function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
-	const [dispatch] = useStateValue();
+	const [{}, dispatch] = useStateValue();
 
-	window.addEventListener("scroll", () => {
+	// window.addEventListener("scroll", () => {
+	// 	if (window.scrollY >= 100) {
+	// 		setFixedNav(true);
+	// 	} else {
+	// 		setFixedNav(false);
+	// 	}
+	// });
+
+	function fixedListener() {
 		if (window.scrollY >= 100) {
 			setFixedNav(true);
 		} else {
 			setFixedNav(false);
 		}
-	});
+	}
+
+	useEffect(() => {
+		window.addEventListener("scroll", fixedListener);
+
+		return () => {
+			window.removeEventListener("scroll", fixedListener);
+		};
+	}, []);
 
 	window.addEventListener("resize", () => {
 		if (window.innerWidth <= 768) {
@@ -44,7 +60,7 @@ function Navigation() {
 		<>
 			<StyledNavbar
 				expand="lg"
-				sticky="top"
+				fixed="top"
 				bg="dark"
 				className={`${fixedNav ? "py-2" : "py-3"}`}>
 				<Container className="">
@@ -203,6 +219,7 @@ function Navigation() {
 export default Navigation;
 
 const StyledNavbar = styled(Navbar)`
+	transition: var(--sht-trans);
 	& .nav__item-wrap:first-child {
 		border-right: 1px solid gray;
 		padding-right: 10px;

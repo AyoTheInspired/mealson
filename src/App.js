@@ -13,8 +13,8 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Navigation />
 				<ScrollIcon />
+				<Navigation />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/home" component={Home} />

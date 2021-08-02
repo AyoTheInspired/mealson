@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+// import "tippy.js/dist/tippy.css"; // optional
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../global-state/StateProvider";
+import { locationItems } from "../appData";
 
 function Hero() {
 	const [{ cuisineItem }] = useStateValue();
+	const [location, setLocation] = useState("Lagos");
+
 	return (
 		<Container fluid>
 			<Row>
@@ -33,7 +36,7 @@ function Hero() {
 
 					<div className="hero__mid mt-4 mb-5">
 						<h2 className="major-text mb-0 text-center text-white">
-							We deliver your favorite meal, <br /> fresh & fast in
+							We deliver your favorite meal, <br /> fresh & fast in&nbsp;
 							<Tippy
 								interactive
 								trigger="click"
@@ -41,17 +44,20 @@ function Hero() {
 								arrow={false}
 								content={
 									<div className="hero__tip-wrap">
-										<h6 className="mb-0 hero__tip-item p-2">Los Angeles</h6>
-										<h6 className="mb-0 hero__tip-item p-2">Chicago</h6>
-										<h6 className="mb-0 hero__tip-item p-2">Houston</h6>
-										<h6 className="mb-0 hero__tip-item p-2">Philadelphia</h6>
-										<h6 className="mb-0 hero__tip-item p-2">San Diego</h6>
-										<h6 className="mb-0 hero__tip-item p-2">Miami</h6>
-										<h6 className="mb-0 hero__tip-item p-2">New York</h6>
+										{locationItems.map((item, id) => (
+											<h6
+												key={id + 1}
+												className="mb-0 hero__tip-item p-2"
+												onClick={() => {
+													setLocation(item);
+												}}>
+												{item}
+											</h6>
+										))}
 									</div>
 								}>
 								<span className="hero__dropdown">
-									Lagos
+									{location}
 									<IoMdArrowDropdown />{" "}
 								</span>
 							</Tippy>

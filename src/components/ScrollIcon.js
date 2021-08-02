@@ -23,7 +23,9 @@ function ScrollIcon() {
 	useEffect(() => {
 		window.addEventListener("scroll", listener);
 
-		return window.removeEventListener("scroll", listener);
+		return () => {
+			window.removeEventListener("scroll", listener);
+		};
 	}, [showScroll]);
 
 	return (

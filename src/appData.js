@@ -77,6 +77,16 @@ export const navItems = [
 	},
 ];
 
+export const locationItems = [
+	"Lagos",
+	"Chicago",
+	"Houston",
+	"Philadelphia",
+	"San Diego",
+	"Miami",
+	"New York",
+];
+
 export const menuItems = [
 	{
 		itemImgSrc: "./images/01.jpg",
