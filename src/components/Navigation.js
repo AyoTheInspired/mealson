@@ -22,7 +22,7 @@ function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
-	const [cuisineItem, dispatch] = useStateValue();
+	const [dispatch] = useStateValue();
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY >= 100) {
@@ -96,8 +96,7 @@ function Navigation() {
 												content={
 													hoverItems ? (
 														hoverItems.map((item, id) => {
-															const { cuisineName, cuisineUrl, cuisineSource } =
-																item;
+															const { cuisineName, cuisineSource } = item;
 															return (
 																<div key={id + 1} className="">
 																	{dropdown ? (

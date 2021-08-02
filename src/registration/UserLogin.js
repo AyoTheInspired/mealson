@@ -1,6 +1,5 @@
 import React from "react";
 import "./registration.css";
-import styled from "styled-components";
 import { FaUserCheck, FaUserLock } from "react-icons/fa";
 import { Form, InputGroup, FormControl } from "react-bootstrap";
 

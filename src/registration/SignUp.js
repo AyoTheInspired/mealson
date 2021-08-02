@@ -1,6 +1,6 @@
 import React from "react";
 import "./registration.css";
-import { FaUserCheck, FaUserLock, FaEye } from "react-icons/fa";
+import { FaUserCheck, FaEye } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
 

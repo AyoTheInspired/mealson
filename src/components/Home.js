@@ -8,8 +8,6 @@ import UserReviews from "./UserReviews";
 import Footer from "./Footer";
 
 function Home() {
-	const dynamicsSection = useRef(null);
-
 	return (
 		<>
 			<Hero />

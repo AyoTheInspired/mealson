@@ -25,6 +25,7 @@ function PopularRestaurants() {
 
 							return (
 								<img
+									key={idx + 1}
 									src={resLogo}
 									alt={resLogo}
 									className="res__img w-25 p-3 mx-3 my-2"

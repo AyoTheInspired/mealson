@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLock, FaUserAlt, FaTimes } from "react-icons/fa";
+import { FaLock, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./registration.css";
 

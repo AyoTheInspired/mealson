@@ -7,19 +7,32 @@ import Fade from "react-reveal/Fade";
 import { BiDish } from "react-icons/bi";
 import { useStateValue } from "../global-state/StateProvider";
 import actionTypes from "../global-state/reducer";
+import { FaTimes } from "react-icons/fa";
 
 function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
-	const [{ cuisineClicked }, dispatch] = useStateValue();
+	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
 
 	return (
 		<Container fluid>
 			<Row>
 				<Section className="trending__wrap px-0" id="dynamics">
 					{cuisineClicked && (
-						<div className="col bg-dark p-3 dynamics__wrapper flexed mt-5">
-							<h2 className="text-white text-center mb-0">DYNAMICS SECTION</h2>
+						<div className="col bg-dark p-4 dynamics__wrapper mt-5">
+							<div className="dynamics__header col-lg ml-auto d-flex justify-content-between align-items-center">
+								<img src="/images/brand.png" width="40" alt="" />
+								<h3 className="text-white text-center mb-0 dynamics__header-text">
+									AVAILABLE CUISINES FOR &nbsp;
+									<span className="dynamics__header-cuisineItem">
+										{cuisineItem?.toUpperCase()}
+									</span>
+								</h3>
+								{/* <div className="dynamics__close-wrap p-3"> */}
+								<FaTimes className="dynamics__header-close" />
+								{/* </div> */}
+							</div>
+							<div className="underline-sm"></div>
 						</div>
 					)}
 					<Slide bottom>
@@ -226,6 +239,24 @@ const Section = styled.section`
 
 	.dynamics__wrapper {
 		min-height: 300px;
+
+		.dynamics__header-text {
+			font-family: "Rubik", sans-serif;
+			letter-spacing: 0.3px;
+			font-size: 25px;
+		}
+
+		.dynamics__header-close {
+			color: #fff;
+			font-size: 22px;
+			cursor: pointer;
+			transition: var(--sht-trans);
+
+			&:hover {
+				transform: scale(1.05);
+				color: var(--nav-hvr);
+			}
+		}
 	}
 `;
 

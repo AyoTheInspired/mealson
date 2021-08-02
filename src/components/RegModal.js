@@ -6,7 +6,7 @@ import { Container, Row } from "react-bootstrap";
 import RegModalHeader from "../registration/RegModalHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function RegModal({}) {
+function RegModal() {
 	const [defaultModalView, setDefaultModalView] = useState(true);
 
 	return (

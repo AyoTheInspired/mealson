@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import StarRatingComponent from "react-star-rating-component";
 import { customerReviews } from "../appData";
 
 function UserReviews() {
-	const [rating, setRating] = useState(3);
-
 	return (
 		<Container fluid>
 			<Row>

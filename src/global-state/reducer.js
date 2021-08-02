@@ -1,6 +1,6 @@
 export const initialState = {
 	cuisineItem: null,
-	cuisineClicked: false,
+	cuisineClicked: true,
 };
 
 export const actionTypes = {
