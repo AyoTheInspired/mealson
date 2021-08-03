@@ -10,7 +10,7 @@ import Footer from "./Footer";
 function Home() {
 	return (
 		<>
-			{/* <Hero /> */}
+			<Hero />
 			<TrendingFood />
 			<MobileSection />
 			<Partners />

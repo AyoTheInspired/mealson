@@ -18,6 +18,7 @@ function Cuisines() {
 	const url = `https://api.edamam.com/search?q=${category}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
 
 	const getCuisines = async () => {
+		setLoading(true);
 		await fetch(url)
 			.then((response) =>
 				response.json().then((data) => {
@@ -41,12 +42,16 @@ function Cuisines() {
 				<Section className="col">
 					<div className="px-3 py-4 dynamics__wrapper">
 						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-start">
-							<img src="/images/brand.png" width="40" alt="logo" />
+							{/* <img src="/images/brand.png" width="40" alt="logo" /> */}
 							<div className="mx-auto col">
 								<h3 className="mb-3 dynamics__header-text text-center">
 									AVAILABLE CUISINES FOR &nbsp;
 									<span className="dynamics__header-cuisineItem">
-										{cuisineItem?.toUpperCase()}
+										{cuisineItem?.toUpperCase() || (
+											<span className="cuisine__select">
+												Select a Cuisine Type
+											</span>
+										)}
 									</span>
 									<div className="underline-sm"></div>
 								</h3>
@@ -55,10 +60,12 @@ function Cuisines() {
 
 						<div className="dynamics__body flexed flex-wrap py-3">
 							{loading ? (
-								<h3 className="mb-0 fetching__title">FETCHING DATA...</h3>
+								<h3 className="mb-0 fetching__title text-white">
+									FETCHING DATA...
+								</h3>
 							) : (
 								menu.map((menu, id) => {
-									const { label, image, cuisineType } = menu.recipe;
+									const { label, image, dishType } = menu.recipe;
 									return (
 										<Card
 											key={id + 1}
@@ -68,14 +75,12 @@ function Cuisines() {
 												src={image}
 												className="cuisine__image"
 												alt={label}
-												// width="500"
-												// height="20"
 											/>
-											<Card.Body className="cuisine__body flexed">
-												<h5 className="cuisine__type mb-0 text-center">
-													{label}
-												</h5>
-												<p className="text-center text-dark cuisine__name"></p>
+											<Card.Body className="cuisine__body flex-col">
+												<h5 className="cuisine__label text-center">{label}</h5>
+												{/* <p className="text-center bg-dark text-white cuisine__dish-type p-2 mb-0">
+													{dishType}
+												</p> */}
 											</Card.Body>
 										</Card>
 									);
@@ -103,6 +108,10 @@ const Section = styled.section`
 		color: #fff;
 	}
 
+	.cuisine__select {
+		color: var(--nav-hvr);
+	}
+
 	.dynamics__body {
 		min-height: 70vh !important;
 	}
@@ -116,11 +125,11 @@ const Section = styled.section`
 
 	.cuisine__card {
 		padding: 0 0 !important;
-		box-shadow: 0px 1px 15px #ddd;
+		box-shadow: 0px 0px 2px #f1f7f8;
 	}
 
 	.cuisine__body {
-		padding: 10px 0 !important;
+		padding: 10px 5px 5px 5px !important;
 	}
 
 	.cuisine__image {
@@ -131,10 +140,11 @@ const Section = styled.section`
 		/* width: 20vw; */
 	}
 
-	.cuisine__type {
+	.cuisine__label {
 		font-family: "Rubik", sans-serif;
 		letter-spacing: 0.2px;
 		font-size: 18px;
+		line-height: 1.4rem;
 	}
 
 	/* .dynamics__header-close {
