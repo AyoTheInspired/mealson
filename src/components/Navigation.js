@@ -60,7 +60,7 @@ function Navigation() {
 					<Navbar.Brand className="mr-auto">
 						<img
 							src="./images/brand.png"
-							alt="site-logo"
+							alt="Mealson"
 							className="site__brand text-white mr-4"
 							height="30"
 							width="30"
