@@ -25,14 +25,6 @@ function Navigation() {
 	const [burgerClicked, setBurgerClicked] = useState(false);
 	const [{}, dispatch] = useStateValue();
 
-	// window.addEventListener("scroll", () => {
-	// 	if (window.scrollY >= 100) {
-	// 		setFixedNav(true);
-	// 	} else {
-	// 		setFixedNav(false);
-	// 	}
-	// });
-
 	function fixedListener() {
 		if (window.scrollY >= 100) {
 			setFixedNav(true);
@@ -113,7 +105,8 @@ function Navigation() {
 												content={
 													hoverItems ? (
 														hoverItems.map((item, id) => {
-															const { cuisineName, cuisineSource } = item;
+															const { cuisineName, cuisineSource, category } =
+																item;
 															return (
 																<div key={id + 1} className="">
 																	{dropdown ? (
@@ -125,28 +118,28 @@ function Navigation() {
 																		</div>
 																	) : (
 																		<div className="large__cuisine-wrap px-2">
-																			<Link
-																				to={`/cuisines/:${cuisineName}`}
-																				className="large__cuisine-title">
-																				<div
-																					className="flex-col my-1"
+																			<div className="flex-col my-1">
+																				<img
+																					src={cuisineSource}
+																					alt="cuisine__icon"
+																					className="cuisine__icon"
+																					width="25"
+																					height="25"
+																				/>
+																				<Link
 																					onClick={() =>
 																						dispatch({
 																							type: actionTypes.OPEN_DYNAMICS,
 																							payload: cuisineName,
+																							category: item.category,
 																						})
-																					}>
-																					<img
-																						src={cuisineSource}
-																						alt="cuisine__icon"
-																						className="cuisine__icon"
-																						width="25"
-																						height="25"
-																					/>
-
+																					}
+																					to={`/cuisines/${cuisineName}`}
+																					className="large__cuisine-title">
 																					{cuisineName}
-																				</div>
-																			</Link>
+																					{/* {category} */}
+																				</Link>
+																			</div>
 																		</div>
 																	)}
 																</div>
@@ -311,7 +304,7 @@ const StyledNavbar = styled(Navbar)`
 
 	& .large__cuisine-title {
 		font-family: "Rubik", sans-serif;
-		font-size: 15px;
+		font-size: 13px;
 		margin-top: 3px;
 		color: var(--mdl-lbl);
 		transition: var(--sht-trans);

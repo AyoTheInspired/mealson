@@ -40,43 +40,6 @@ function TrendingFood() {
 		<Container fluid>
 			<Row>
 				<Section id="dynamics" className="trending__wrap px-0">
-					{/* {cuisineClicked ? (
-						<div className="col bg-dark p-4 dynamics__wrapper">
-							<div className="dynamics__header col-lg ml-auto d-flex justify-content-between align-items-center">
-								<img src="/images/brand.png" width="40" alt="" />
-								<h3 className="text-white text-center mb-0 dynamics__header-text">
-									AVAILABLE CUISINES FOR &nbsp;
-									<span className="dynamics__header-cuisineItem">
-										{cuisineItem?.toUpperCase()}
-									</span>
-								</h3>
-								<FaTimes
-									className="dynamics__header-close"
-									onClick={
-										() => dispatch({ type: actionTypes.CLOSE_DYNAMICS })
-										// () => setOpenDynamics(!openDynamics)
-									}
-								/>
-							</div>
-							<div className="underline-sm"></div>
-							{loading
-								? "ITS LOADING"
-								: menu.map((recipe, id) => {
-										if (loading) {
-											<h3 className="text-white">"LOADING..."</h3>;
-										} else {
-											<div key={id + 1}>
-												<p className="text-center text-white">
-													{recipe.recipe.label}
-												</p>
-											</div>;
-										}
-								  })}
-							<button className="d-block" onClick={console.log("here")} cons>
-								GET CUISINES
-							</button>
-						</div>
-					) : null} */}
 					<Slide bottom>
 						<div className="trending__header" id="trending">
 							<div className="mx-auto flex-col mt-5 mb-4 text-center">
@@ -278,28 +241,6 @@ const Section = styled.section`
 	.tray__title {
 		color: var(--nav-hvr);
 	}
-
-	/* .dynamics__wrapper {
-		min-height: 300px;
-
-		.dynamics__header-text {
-			font-family: "Rubik", sans-serif;
-			letter-spacing: 0.3px;
-			font-size: 25px;
-		}
-
-		.dynamics__header-close {
-			color: #fff;
-			font-size: 22px;
-			cursor: pointer;
-			transition: var(--sht-trans);
-
-			&:hover {
-				transform: scale(1.3);
-				color: var(--nav-hvr);
-			}
-		}
-	} */
 `;
 
 const ToastContainer = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Card } from "react-bootstrap";
 import styled from "styled-components";
 import { useStateValue } from "../global-state/StateProvider";
 
@@ -9,38 +9,41 @@ function Cuisines() {
 	const [meals, setMeals] = useState({});
 	const [menu, setMenu] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [{ cuisineItem }, dispatch] = useStateValue();
+	const [{ cuisineItem, category }, dispatch] = useStateValue();
 
 	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
 
 	const APP_ID = "eac8567b";
 
-	const url = `https://api.edamam.com/search?q=chinese&app_id=${APP_ID}&app_key=${APP_KEY}`;
+	const url = `https://api.edamam.com/search?q=${category}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
 
 	const getCuisines = async () => {
-		await fetch(url).then((response) =>
-			response.json().then((data) => {
-				console.log(data);
-				setLoading(false);
-				setMenu(data.hits);
-			})
-		);
+		await fetch(url)
+			.then((response) =>
+				response.json().then((data) => {
+					// console.log(data);
+					setLoading(false);
+					setMenu(data.hits);
+				})
+			)
+			.catch((err) => alert(err.message));
 	};
+
+	useEffect(() => {
+		getCuisines();
+	}, [category]);
+
+	console.log(menu);
 
 	return (
 		<Container fluid>
 			<Row>
 				<Section className="col">
-					<div className="p-3 dynamics__wrapper">
-						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-center">
-							<img
-								src="/images/brand.png"
-								width="40"
-								// className="mr-auto"
-								alt="logo"
-							/>
+					<div className="px-3 py-4 dynamics__wrapper">
+						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-start">
+							<img src="/images/brand.png" width="40" alt="logo" />
 							<div className="mx-auto col">
-								<h3 className="text-dark mb-0 dynamics__header-text text-center">
+								<h3 className="text-dark mb-3 dynamics__header-text text-center">
 									AVAILABLE CUISINES FOR &nbsp;
 									<span className="dynamics__header-cuisineItem">
 										{cuisineItem?.toUpperCase()}
@@ -50,23 +53,43 @@ function Cuisines() {
 							</div>
 						</div>
 
-						<div className="dynamics__body flex-col">
-							{loading
-								? "ITS LOADING"
-								: menu.map((recipe, id) => {
-										return (
-											<div key={id + 1}>
-												<p className="text-center text-dark">
-													{recipe.recipe.label}
-												</p>
-											</div>
-										);
-								  })}
-							<button className="d-block" onClick={getCuisines} cons>
-								GET CUISINES
-							</button>
+						<div className="dynamics__body flexed flex-wrap py-3">
+							{loading ? (
+								<h3 className="mb-0 fetching__title">FETCHING DATA...</h3>
+							) : (
+								menu.map((menu, id) => {
+									const { label, image, cuisineType } = menu.recipe;
+									return (
+										<Card
+											key={id + 1}
+											className="col-lg-3 col-md-5 col-sm-10 m-2 cuisine__card">
+											<Card.Img
+												variant="top"
+												src={image}
+												className="cuisine__image"
+												alt={label}
+												// width="500"
+												// height="20"
+											/>
+											<Card.Body>
+												{/* <Card.Title> */}
+												<h5 className="cuisine__type mb-0 text-center">
+													{/* Cuisine Type: */}
+													{label}
+													{/* {cuisineType} */}
+												</h5>
+												{/* </Card.Title> */}
+												<p className="text-center text-dark cuisine__name"></p>
+											</Card.Body>
+										</Card>
+									);
+								})
+							)}
+							{/* <h4 className="text-dark">Cuisine Category is: {category}</h4> */}
 						</div>
-						{/* {loading ? "ITS LOADING" : "NO ITS NOT LOADING"} */}
+						{/* <button className="d-block" onClick={getCuisines} cons>
+							GET CUISINES
+						</button> */}
 					</div>
 				</Section>
 			</Row>
@@ -79,16 +102,37 @@ export default Cuisines;
 const Section = styled.section`
 	min-height: calc(100vh - 75px);
 
-	.dynamics__wrapper {
-		min-height: 300px;
+	.dynamics__header-text {
+		font-family: "Rubik", sans-serif;
+		letter-spacing: 0.3px;
+		font-size: 25px;
+	}
 
-		.dynamics__header-text {
-			font-family: "Rubik", sans-serif;
-			letter-spacing: 0.3px;
-			font-size: 25px;
-		}
+	.dynamics__body {
+		min-height: 70vh !important;
+	}
 
-		.dynamics__header-close {
+	.fetching__title {
+		font-family: "Rubik", sans-serif;
+		letter-spacing: 0.3px;
+		/* font-size: 25px; */
+		font-weight: 600;
+	}
+
+	.cuisine__card {
+		padding: 0 0 !important;
+		/* box-shadow: 0px 1px 15px #ddd; */
+	}
+
+	.cuisine__image {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		object-fit: cover;
+		height: 40vh;
+		/* width: 20vw; */
+	}
+
+	/* .dynamics__header-close {
 			color: #fff;
 			font-size: 22px;
 			cursor: pointer;
@@ -98,6 +142,5 @@ const Section = styled.section`
 				transform: scale(1.3);
 				color: var(--nav-hvr);
 			}
-		}
-	}
+		} */
 `;

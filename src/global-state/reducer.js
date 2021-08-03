@@ -1,5 +1,6 @@
 export const initialState = {
 	cuisineItem: null,
+	category: "",
 	cuisineClicked: false,
 };
 
@@ -16,6 +17,7 @@ const reducer = (state, action) => {
 				...state,
 				cuisineClicked: true,
 				cuisineItem: action.payload,
+				category: action.category,
 			};
 
 		case actionTypes.CLOSE_DYNAMICS:

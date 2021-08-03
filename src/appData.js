@@ -34,31 +34,39 @@ export const navItems = [
 			{
 				cuisineSource: "./images/burger.svg",
 				cuisineName: "Burgers & Fries",
+				category: "Burger",
+
 				// cuisineUrl: "/cuisines",
 			},
 			{
 				cuisineSource: "./images/noodles.svg",
 				cuisineName: "Noodles",
+				category: "Noodles",
 			},
 			{
 				cuisineSource: "./images/pizza.svg",
 				cuisineName: "Pizza & Pasta",
+				category: "Pizza",
 			},
 			{
 				cuisineSource: "./images/coffee.svg",
 				cuisineName: "Coffee & Desserts",
+				category: "Desserts",
 			},
 			{
 				cuisineSource: "./images/steak.svg",
 				cuisineName: "Grills & Steaks",
+				category: "Steaks",
 			},
 			{
 				cuisineSource: "./images/fish.svg",
 				cuisineName: "Fish & Seafood",
+				category: "Seafood",
 			},
 			{
 				cuisineSource: "./images/healthy.svg",
 				cuisineName: "Fruities",
+				category: "Fruities",
 			},
 		],
 	},
@@ -91,6 +99,7 @@ export const menuItems = [
 	{
 		itemImgSrc: "./images/01.jpg",
 		itemTitle: "Burgers & Fries",
+		category: "Burger",
 	},
 	{
 		itemImgSrc: "./images/02.jpg",
@@ -99,18 +108,22 @@ export const menuItems = [
 	{
 		itemImgSrc: "./images/03.jpg",
 		itemTitle: "Sushi & Rolls",
+		category: "Burger",
 	},
 	{
 		itemImgSrc: "./images/04.jpg",
 		itemTitle: "Pizza & Pasta",
+		category: "Burger",
 	},
 	{
 		itemImgSrc: "./images/05.jpg",
 		itemTitle: "Coffee & Desserts",
+		category: "Burger",
 	},
 	{
 		itemImgSrc: "./images/06.jpg",
 		itemTitle: "Fruities",
+		category: "Burger",
 	},
 ];
 
