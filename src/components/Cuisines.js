@@ -43,7 +43,7 @@ function Cuisines() {
 						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-start">
 							<img src="/images/brand.png" width="40" alt="logo" />
 							<div className="mx-auto col">
-								<h3 className="text-dark mb-3 dynamics__header-text text-center">
+								<h3 className="mb-3 dynamics__header-text text-center">
 									AVAILABLE CUISINES FOR &nbsp;
 									<span className="dynamics__header-cuisineItem">
 										{cuisineItem?.toUpperCase()}
@@ -71,25 +71,17 @@ function Cuisines() {
 												// width="500"
 												// height="20"
 											/>
-											<Card.Body>
-												{/* <Card.Title> */}
+											<Card.Body className="cuisine__body flexed">
 												<h5 className="cuisine__type mb-0 text-center">
-													{/* Cuisine Type: */}
 													{label}
-													{/* {cuisineType} */}
 												</h5>
-												{/* </Card.Title> */}
 												<p className="text-center text-dark cuisine__name"></p>
 											</Card.Body>
 										</Card>
 									);
 								})
 							)}
-							{/* <h4 className="text-dark">Cuisine Category is: {category}</h4> */}
 						</div>
-						{/* <button className="d-block" onClick={getCuisines} cons>
-							GET CUISINES
-						</button> */}
 					</div>
 				</Section>
 			</Row>
@@ -101,13 +93,14 @@ export default Cuisines;
 
 const Section = styled.section`
 	min-height: calc(100vh - 75px);
-	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-		url("./images/hero-bgs.jpg") center/cover no-repeat fixed;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+		url("/images/heroe.jpg") center/cover no-repeat fixed;
 
 	.dynamics__header-text {
 		font-family: "Rubik", sans-serif;
 		letter-spacing: 0.3px;
 		font-size: 25px;
+		color: #fff;
 	}
 
 	.dynamics__body {
@@ -123,7 +116,11 @@ const Section = styled.section`
 
 	.cuisine__card {
 		padding: 0 0 !important;
-		/* box-shadow: 0px 1px 15px #ddd; */
+		box-shadow: 0px 1px 15px #ddd;
+	}
+
+	.cuisine__body {
+		padding: 10px 0 !important;
 	}
 
 	.cuisine__image {
@@ -132,6 +129,12 @@ const Section = styled.section`
 		object-fit: cover;
 		height: 40vh;
 		/* width: 20vw; */
+	}
+
+	.cuisine__type {
+		font-family: "Rubik", sans-serif;
+		letter-spacing: 0.2px;
+		font-size: 18px;
 	}
 
 	/* .dynamics__header-close {
