@@ -83,7 +83,7 @@ function Hero(props, ref) {
 export default forwardRef(Hero);
 
 const Section = styled.section`
-	min-height: 100vh;
+	min-height: calc(100vh - 75px);
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
 		url("./images/heroe.jpg") center/cover no-repeat fixed;
 

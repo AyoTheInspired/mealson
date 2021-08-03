@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import { Link as ScrollLink } from "react-scroll";
+// import { Link as ScrollLink } from "react-scroll";
 import {
 	Navbar,
 	Nav,
@@ -61,7 +61,7 @@ function Navigation() {
 		<>
 			<StyledNavbar
 				expand="lg"
-				fixed="top"
+				sticky="top"
 				bg="dark"
 				className={`${fixedNav ? "py-2" : "py-3"}`}>
 				<Container className="">
@@ -125,27 +125,28 @@ function Navigation() {
 																		</div>
 																	) : (
 																		<div className="large__cuisine-wrap px-2">
-																			<ScrollLink
-																				to="dynamics"
-																				offset={-62}
-																				className="flex-col my-1"
-																				onClick={() =>
-																					dispatch({
-																						type: actionTypes.OPEN_DYNAMICS,
-																						payload: cuisineName,
-																					})
-																				}>
-																				<img
-																					src={cuisineSource}
-																					alt="cuisine__icon"
-																					className="cuisine__icon"
-																					width="25"
-																					height="25"
-																				/>
-																				<h6 className="large__cuisine-title">
+																			<Link
+																				to={`/cuisines/:${cuisineName}`}
+																				className="large__cuisine-title">
+																				<div
+																					className="flex-col my-1"
+																					onClick={() =>
+																						dispatch({
+																							type: actionTypes.OPEN_DYNAMICS,
+																							payload: cuisineName,
+																						})
+																					}>
+																					<img
+																						src={cuisineSource}
+																						alt="cuisine__icon"
+																						className="cuisine__icon"
+																						width="25"
+																						height="25"
+																					/>
+
 																					{cuisineName}
-																				</h6>
-																			</ScrollLink>
+																				</div>
+																			</Link>
 																		</div>
 																	)}
 																</div>
@@ -309,9 +310,15 @@ const StyledNavbar = styled(Navbar)`
 	}
 
 	& .large__cuisine-title {
-		font-size: 12px;
+		font-family: "Rubik", sans-serif;
+		font-size: 15px;
 		margin-top: 3px;
 		color: var(--mdl-lbl);
+		transition: var(--sht-trans);
+		&:hover {
+			text-decoration: none !important;
+			color: var(--nav-hvr) !important;
+		}
 	}
 
 	& .soon__text {

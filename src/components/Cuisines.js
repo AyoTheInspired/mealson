@@ -1,54 +1,103 @@
-// import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import { Container, Row } from "react-bootstrap";
-// import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
+import styled from "styled-components";
+import { useStateValue } from "../global-state/StateProvider";
 
-// function Cuisines() {
-// 	const { cuisineName, cuisineSource } = useParams();
-// 	const [meals, setMeals] = useState({});
+function Cuisines() {
+	const { cuisineName } = useParams();
+	const [meals, setMeals] = useState({});
+	const [menu, setMenu] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [{ cuisineItem }, dispatch] = useStateValue();
 
-// 	useEffect(
-// 		() => {
-// 			fetch(
-// 				"https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
-// 			).then((res) =>
-// 				res.json().then((data) => {
-// 					console.log(data);
-// 					console.log(typeof data);
-// 				})
-// 			);
-// 		},
-// 		{ cuisineName }
-// 	);
+	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
 
-// 	return (
-// 		<Container fluid>
-// 			<Row>
-// 				<Section className="flex-col bg-danger py-5">
-// 					<h3 className="text-center text-primary d-block">
-// 						CUISINES PAGE for {cuisineName}
-// 					</h3>
+	const APP_ID = "eac8567b";
 
-// 					<p>
-// 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-// 						dicta autem sapiente eligendi dolor praesentium ex quasi nisi
-// 						laboriosam, omnis libero voluptate incidunt. Corporis ut fuga iure
-// 						aspernatur quos eius facilis fugit, pariatur sed nisi vitae
-// 						consequatur laboriosam quis similique praesentium explicabo deserunt
-// 						accusamus inventore corrupti? Iure perferendis iusto illum fugiat
-// 						veritatis eius maxime excepturi dolores modi nesciunt! Quia beatae
-// 						soluta corporis, quas eligendi repellat nihil. Delectus sunt alias
-// 						voluptatem ut excepturi aut, facere perspiciatis. Voluptatibus cum
-// 						veritatis molestiae minus sapiente ipsam, asperiores repudiandae eos
-// 						vitae reprehenderit quam accusantium nostrum exercitationem tempora
-// 						ve.
-// 					</p>
-// 				</Section>
-// 			</Row>
-// 		</Container>
-// 	);
-// }
+	const url = `https://api.edamam.com/search?q=chinese&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-// export default Cuisines;
+	const getCuisines = async () => {
+		await fetch(url).then((response) =>
+			response.json().then((data) => {
+				console.log(data);
+				setLoading(false);
+				setMenu(data.hits);
+			})
+		);
+	};
 
-// const Section = styled.section``;
+	return (
+		<Container fluid>
+			<Row>
+				<Section className="col">
+					<div className="p-3 dynamics__wrapper">
+						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-center">
+							<img
+								src="/images/brand.png"
+								width="40"
+								// className="mr-auto"
+								alt="logo"
+							/>
+							<div className="mx-auto col">
+								<h3 className="text-dark mb-0 dynamics__header-text text-center">
+									AVAILABLE CUISINES FOR &nbsp;
+									<span className="dynamics__header-cuisineItem">
+										{cuisineItem?.toUpperCase()}
+									</span>
+									<div className="underline-sm"></div>
+								</h3>
+							</div>
+						</div>
+
+						<div className="dynamics__body flex-col">
+							{loading
+								? "ITS LOADING"
+								: menu.map((recipe, id) => {
+										return (
+											<div key={id + 1}>
+												<p className="text-center text-dark">
+													{recipe.recipe.label}
+												</p>
+											</div>
+										);
+								  })}
+							<button className="d-block" onClick={getCuisines} cons>
+								GET CUISINES
+							</button>
+						</div>
+						{/* {loading ? "ITS LOADING" : "NO ITS NOT LOADING"} */}
+					</div>
+				</Section>
+			</Row>
+		</Container>
+	);
+}
+
+export default Cuisines;
+
+const Section = styled.section`
+	min-height: calc(100vh - 75px);
+
+	.dynamics__wrapper {
+		min-height: 300px;
+
+		.dynamics__header-text {
+			font-family: "Rubik", sans-serif;
+			letter-spacing: 0.3px;
+			font-size: 25px;
+		}
+
+		.dynamics__header-close {
+			color: #fff;
+			font-size: 22px;
+			cursor: pointer;
+			transition: var(--sht-trans);
+
+			&:hover {
+				transform: scale(1.3);
+				color: var(--nav-hvr);
+			}
+		}
+	}
+`;

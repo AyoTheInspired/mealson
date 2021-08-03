@@ -13,27 +13,34 @@ function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
 	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
+	const [menu, setMenu] = useState([]);
+	const [loading, setLoading] = useState(true);
+	// const [openDynamics, setOpenDynamics] = useState(true);
 
-	const API_KEY = "f81207052edb439981703a89b22f0297";
+	// const API_KEY = "f81207052edb439981703a89b22f0297";
 
-	useEffect(() => {
-		const getCuisines = () => {
-			fetch(
-				`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}`
-			).then((response) =>
-				response.json().then((data) => {
-					console.log(data);
-				})
-			);
-		};
-		getCuisines();
-	});
+	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
+
+	const APP_ID = "eac8567b";
+
+	const url = `https://api.edamam.com/search?q=chinese&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+	// useEffect(() => {
+	const getCuisines = async () => {
+		await fetch(url).then((response) =>
+			response.json().then((data) => {
+				// console.log(data);
+				setMenu(data.hits);
+				// setLoading(false);
+			})
+		);
+	};
 
 	return (
 		<Container fluid>
 			<Row>
 				<Section id="dynamics" className="trending__wrap px-0">
-					{cuisineClicked && (
+					{/* {cuisineClicked ? (
 						<div className="col bg-dark p-4 dynamics__wrapper">
 							<div className="dynamics__header col-lg ml-auto d-flex justify-content-between align-items-center">
 								<img src="/images/brand.png" width="40" alt="" />
@@ -43,11 +50,33 @@ function TrendingFood() {
 										{cuisineItem?.toUpperCase()}
 									</span>
 								</h3>
-								<FaTimes className="dynamics__header-close" />
+								<FaTimes
+									className="dynamics__header-close"
+									onClick={
+										() => dispatch({ type: actionTypes.CLOSE_DYNAMICS })
+										// () => setOpenDynamics(!openDynamics)
+									}
+								/>
 							</div>
 							<div className="underline-sm"></div>
+							{loading
+								? "ITS LOADING"
+								: menu.map((recipe, id) => {
+										if (loading) {
+											<h3 className="text-white">"LOADING..."</h3>;
+										} else {
+											<div key={id + 1}>
+												<p className="text-center text-white">
+													{recipe.recipe.label}
+												</p>
+											</div>;
+										}
+								  })}
+							<button className="d-block" onClick={console.log("here")} cons>
+								GET CUISINES
+							</button>
 						</div>
-					)}
+					) : null} */}
 					<Slide bottom>
 						<div className="trending__header" id="trending">
 							<div className="mx-auto flex-col mt-5 mb-4 text-center">
@@ -250,7 +279,7 @@ const Section = styled.section`
 		color: var(--nav-hvr);
 	}
 
-	.dynamics__wrapper {
+	/* .dynamics__wrapper {
 		min-height: 300px;
 
 		.dynamics__header-text {
@@ -266,11 +295,11 @@ const Section = styled.section`
 			transition: var(--sht-trans);
 
 			&:hover {
-				transform: scale(1.05);
+				transform: scale(1.3);
 				color: var(--nav-hvr);
 			}
 		}
-	}
+	} */
 `;
 
 const ToastContainer = styled.div`
