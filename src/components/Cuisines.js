@@ -43,7 +43,7 @@ function Cuisines() {
 					<div className="px-3 py-4 dynamics__wrapper">
 						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-start">
 							<div className="mx-auto col">
-								<h3 className="mb-3 dynamics__header-text text-center">
+								<h3 className="mb-2 dynamics__header-text text-center">
 									AVAILABLE CUISINES FOR &nbsp;
 									<span className="dynamics__header-cuisineItem">
 										{cuisineItem?.toUpperCase() || (
@@ -68,7 +68,7 @@ function Cuisines() {
 									return (
 										<Card
 											key={id + 1}
-											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-4 cuisine__card">
+											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-2 cuisine__card">
 											<Card.Img
 												variant="top"
 												src={image}
