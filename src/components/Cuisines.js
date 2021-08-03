@@ -15,14 +15,17 @@ function Cuisines() {
 
 	const APP_ID = "eac8567b";
 
-	const url = `https://api.edamam.com/search?q=${category}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
+	const startingPoint = Math.floor(Math.random() * 70);
+
+	const url = `https://api.edamam.com/search?q=${category}&app_id=${APP_ID}&app_key=${APP_KEY}&from=${startingPoint}&to=${
+		startingPoint + 12
+	}`;
 
 	const getCuisines = async () => {
 		setLoading(true);
 		await fetch(url)
 			.then((response) =>
 				response.json().then((data) => {
-					// console.log(data);
 					setLoading(false);
 					setMenu(data.hits);
 				})
@@ -34,15 +37,12 @@ function Cuisines() {
 		getCuisines();
 	}, [category]);
 
-	console.log(menu);
-
 	return (
 		<Container fluid>
 			<Row>
 				<Section className="col">
 					<div className="px-3 py-4 dynamics__wrapper">
 						<div className="dynamics__header ml-auto d-flex justify-content-center align-items-start">
-							{/* <img src="/images/brand.png" width="40" alt="logo" /> */}
 							<div className="mx-auto col">
 								<h3 className="mb-3 dynamics__header-text text-center">
 									AVAILABLE CUISINES FOR &nbsp;
@@ -69,7 +69,7 @@ function Cuisines() {
 									return (
 										<Card
 											key={id + 1}
-											className="col-lg-3 col-md-5 col-sm-10 m-2 cuisine__card">
+											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-4 cuisine__card">
 											<Card.Img
 												variant="top"
 												src={image}
