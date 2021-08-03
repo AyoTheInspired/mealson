@@ -27,12 +27,6 @@ const reducer = (state, action) => {
 				cuisineItem: null,
 			};
 
-		// case actionTypes.SET_CUISINE:
-		// 	return {
-		// 		...state,
-		// 		cuisineItem: action.payload,
-		// 	};
-
 		default:
 			return state;
 	}
