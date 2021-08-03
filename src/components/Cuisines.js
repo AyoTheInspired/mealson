@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { useStateValue } from "../global-state/StateProvider";
 
 function Cuisines() {
-	const { cuisineName } = useParams();
 	const [meals, setMeals] = useState({});
 	const [menu, setMenu] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -78,9 +77,6 @@ function Cuisines() {
 											/>
 											<Card.Body className="cuisine__body flex-col">
 												<h5 className="cuisine__label text-center">{label}</h5>
-												{/* <p className="text-center bg-dark text-white cuisine__dish-type p-2 mb-0">
-													{dishType}
-												</p> */}
 											</Card.Body>
 										</Card>
 									);
@@ -108,7 +104,8 @@ const Section = styled.section`
 		color: #fff;
 	}
 
-	.cuisine__select {
+	.cuisine__select,
+	.dynamics__header-cuisineItem {
 		color: var(--nav-hvr);
 	}
 
@@ -119,7 +116,6 @@ const Section = styled.section`
 	.fetching__title {
 		font-family: "Rubik", sans-serif;
 		letter-spacing: 0.3px;
-		/* font-size: 25px; */
 		font-weight: 600;
 	}
 
@@ -137,7 +133,6 @@ const Section = styled.section`
 		border-bottom-right-radius: 0;
 		object-fit: cover;
 		height: 40vh;
-		/* width: 20vw; */
 	}
 
 	.cuisine__label {
@@ -146,16 +141,4 @@ const Section = styled.section`
 		font-size: 18px;
 		line-height: 1.4rem;
 	}
-
-	/* .dynamics__header-close {
-			color: #fff;
-			font-size: 22px;
-			cursor: pointer;
-			transition: var(--sht-trans);
-
-			&:hover {
-				transform: scale(1.3);
-				color: var(--nav-hvr);
-			}
-		} */
 `;
