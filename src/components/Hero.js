@@ -21,10 +21,6 @@ function Hero(props, ref) {
 						<h5 className="notify bg-light p-2 text-center">
 							Please note that this site is still undergoing some minor updates.
 						</h5>
-
-						{/* <h3 className="bg-success text-white ml-auto">
-							The cuisine item is {cuisineItem}
-						</h3> */}
 					</div>
 
 					<Fade bottom>
@@ -80,7 +76,7 @@ function Hero(props, ref) {
 	);
 }
 
-export default forwardRef(Hero);
+export default Hero;
 
 const Section = styled.section`
 	min-height: calc(100vh - 75px);

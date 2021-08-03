@@ -101,6 +101,8 @@ export default Cuisines;
 
 const Section = styled.section`
 	min-height: calc(100vh - 75px);
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+		url("./images/hero-bgs.jpg") center/cover no-repeat fixed;
 
 	.dynamics__header-text {
 		font-family: "Rubik", sans-serif;
