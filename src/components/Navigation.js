@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-// import { Link as ScrollLink } from "react-scroll";
 import {
 	Navbar,
 	Nav,
@@ -66,17 +65,6 @@ function Navigation() {
 							width="30"
 						/>
 					</Navbar.Brand>
-					{/* <div className="nav__right-item">
-						<AiOutlineUser
-							className="nav__right-icon"
-							data-tip
-							data-for="account"
-							onClick={() => setShowModal(!showModal)}
-						/>
-						<StyledReactTooltip id="account" place="right" effect="solid">
-							<p className="nav__right-tooltip mb-0 p-0">Account</p>
-						</StyledReactTooltip>
-					</div> */}
 					<Navbar.Toggle aria-controls="the-nav">
 						<div
 							className="nav-toggler"
@@ -137,7 +125,6 @@ function Navigation() {
 																					to={`/cuisines/${cuisineName}`}
 																					className="large__cuisine-title">
 																					{cuisineName}
-																					{/* {category} */}
 																				</Link>
 																			</div>
 																		</div>
@@ -379,11 +366,6 @@ const StyledNavbar = styled(Navbar)`
 				text-decoration: none;
 			}
 		}
-
-		/* .large__cuisine-wrap {
-			display: flex;
-			flex-direction: row !important;
-		} */
 	}
 `;
 
