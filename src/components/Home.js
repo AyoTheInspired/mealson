@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Hero from ".//Hero";
 import TrendingFood from "./TrendingFood";
 import MobileSection from "./MobileSection";

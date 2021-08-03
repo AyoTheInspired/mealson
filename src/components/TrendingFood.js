@@ -15,26 +15,6 @@ function TrendingFood() {
 	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
 	const [menu, setMenu] = useState([]);
 	const [loading, setLoading] = useState(true);
-	// const [openDynamics, setOpenDynamics] = useState(true);
-
-	// const API_KEY = "f81207052edb439981703a89b22f0297";
-
-	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
-
-	const APP_ID = "eac8567b";
-
-	const url = `https://api.edamam.com/search?q=chinese&app_id=${APP_ID}&app_key=${APP_KEY}`;
-
-	// useEffect(() => {
-	const getCuisines = async () => {
-		await fetch(url).then((response) =>
-			response.json().then((data) => {
-				// console.log(data);
-				setMenu(data.hits);
-				// setLoading(false);
-			})
-		);
-	};
 
 	return (
 		<Container fluid>
