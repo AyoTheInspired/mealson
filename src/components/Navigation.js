@@ -123,8 +123,7 @@ function Navigation() {
 												content={
 													hoverItems ? (
 														hoverItems.map((item, id) => {
-															const { cuisineName, cuisineSource, category } =
-																item;
+															const { cuisineName, cuisineSource } = item;
 															return (
 																<div key={id + 1} className="">
 																	{dropdown ? (
@@ -411,8 +410,6 @@ const StyledNavbar = styled(Navbar)`
 		}
 
 		.location {
-			/* width: 20% !important; */
-			/* margin-right: auto !important; */
 			margin-left: 7px;
 		}
 
