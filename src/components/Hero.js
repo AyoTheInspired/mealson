@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import { Link } from "react-scroll";
@@ -11,7 +11,6 @@ import { actionTypes } from "../global-state/reducer";
 
 function Hero(props, ref) {
 	const [{ location }, dispatch] = useStateValue();
-	// const [location, setLocation] = useState("Lagos");
 
 	return (
 		<Container fluid>

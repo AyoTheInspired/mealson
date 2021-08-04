@@ -7,7 +7,6 @@ export const initialState = {
 
 export const actionTypes = {
 	OPEN_DYNAMICS: "OPEN_DYNAMICS",
-	CLOSE_DYNAMICS: "CLOSE_DYNAMICS",
 	SET_LOCATION: "SET_LOCATION",
 };
 

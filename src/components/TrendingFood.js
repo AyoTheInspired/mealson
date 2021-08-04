@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { menuItems } from "../appData";
 import { Container, Row, Card, Toast } from "react-bootstrap";
 import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 import { BiDish } from "react-icons/bi";
-import { useStateValue } from "../global-state/StateProvider";
-import actionTypes from "../global-state/reducer";
-import { FaTimes } from "react-icons/fa";
 
 function TrendingFood() {
 	const [trayClicked, setTrayClicked] = useState(false);
 	let [trayTitle, setTrayTitle] = useState("");
-	const [{ cuisineClicked, cuisineItem }, dispatch] = useStateValue();
-	const [menu, setMenu] = useState([]);
-	const [loading, setLoading] = useState(true);
 
 	return (
 		<Container fluid>
