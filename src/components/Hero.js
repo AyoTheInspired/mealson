@@ -66,7 +66,7 @@ function Hero(props, ref) {
 					<Fade right>
 						<div className="hero__third">
 							<button className="hero__btn">
-								<Link to="trending" offset={40} className="mb-0 hero__btn-text">
+								<Link to="trending" offset={30} className="mb-0 hero__btn-text">
 									What would you like to eat?
 								</Link>
 							</button>
