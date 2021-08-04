@@ -116,7 +116,7 @@ function Navigation() {
 
 											<Tippy
 												trigger={searchClicked ? "click" : "mouseenter focus"}
-												placement={searchClicked ? "bottom" : "right"}
+												placement="bottom"
 												interactive
 												arrow={false}
 												className="flexed"

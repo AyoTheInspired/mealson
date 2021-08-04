@@ -16,11 +16,11 @@ function Hero(props, ref) {
 		<Container fluid>
 			<Row>
 				<Section className="hero__text-wrap mx-auto flex-col col">
-					<div className="mx-auto mb-3">
+					{/* <div className="mx-auto mb-3">
 						<h5 className="notify bg-light p-2 text-center">
 							Please note that this site is still undergoing some minor updates.
 						</h5>
-					</div>
+					</div> */}
 
 					<Fade bottom>
 						<div className="hero__top">
