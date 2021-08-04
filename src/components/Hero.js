@@ -1,7 +1,6 @@
 import React, { useState, forwardRef } from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
-// import "tippy.js/dist/tippy.css"; // optional
 import { Link } from "react-scroll";
 import Fade from "react-reveal/Fade";
 import { IoMdArrowDropdown } from "react-icons/io";
