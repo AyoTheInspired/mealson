@@ -66,9 +66,9 @@ function Navigation() {
 							width="30"
 						/>
 					</Navbar.Brand>
-					<Navbar.Toggle aria-controls="the-nav">
+					<Navbar.Toggle aria-controls="the-nav" className="nav__toggler-wrap">
 						<div
-							className="nav-toggler"
+							className="nav__toggler"
 							onClick={() => setBurgerClicked(!burgerClicked)}>
 							{burgerClicked ? <FaTimes /> : <FaBars />}
 						</div>
@@ -236,6 +236,15 @@ const StyledNavbar = styled(Navbar)`
 	& .nav__item-wrap:first-child {
 		border-right: 1px solid gray;
 		padding-right: 10px;
+	}
+
+	.nav__toggler-wrap {
+		border: none;
+	}
+
+	.nav__toggler {
+		color: var(--nav-hvr);
+		font-size: 22px;
 	}
 
 	.nav__form-wrap {
