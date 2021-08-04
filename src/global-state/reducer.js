@@ -2,7 +2,7 @@ export const initialState = {
 	cuisineItem: null,
 	category: "",
 	cuisineClicked: false,
-	location: "Bahama",
+	location: "Lagos",
 };
 
 export const actionTypes = {

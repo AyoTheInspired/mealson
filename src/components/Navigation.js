@@ -78,7 +78,6 @@ function Navigation() {
 							<div className="nav__left flexed">
 								<Tippy
 									interactive
-									// trigger="click"
 									placement="bottom"
 									arrow={false}
 									className="flexed"
@@ -99,8 +98,8 @@ function Navigation() {
 											))}
 										</div>
 									}>
-									<div className="nav__link location flexed">
-										<FiMapPin className="mb-1 mr-1 location__icon" />
+									<div className="nav__link location">
+										<FiMapPin className="mb-1 mr-1 ml-auto location__icon" />
 										{location}
 										<IoMdArrowDropdown className="location__dropdown mb-1 mr-1" />{" "}
 									</div>
@@ -117,6 +116,7 @@ function Navigation() {
 
 											<Tippy
 												trigger={searchClicked ? "click" : "mouseenter focus"}
+												placement={searchClicked ? "bottom" : "right"}
 												interactive
 												arrow={false}
 												className="flexed"
@@ -367,6 +367,7 @@ const StyledNavbar = styled(Navbar)`
 	@media (max-width: 768px) {
 		.nav-wrapper {
 			padding-left: 10px;
+			margin-top: 10px;
 		}
 
 		.nav__left {
@@ -407,6 +408,12 @@ const StyledNavbar = styled(Navbar)`
 
 		.nav__icon {
 			margin-right: 7px;
+		}
+
+		.location {
+			/* width: 20% !important; */
+			/* margin-right: auto !important; */
+			margin-left: 7px;
 		}
 
 		.acct__btn {
