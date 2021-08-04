@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { FiMapPin } from "react-icons/fi";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import {
@@ -77,15 +78,16 @@ function Navigation() {
 							<div className="nav__left flexed">
 								<Tippy
 									interactive
-									trigger="click"
-									placement="right"
+									// trigger="click"
+									placement="bottom"
 									arrow={false}
+									className="flexed"
 									content={
 										<div className="hero__tip-wrap">
 											{locationItems.map((location, id) => (
 												<h6
 													key={id + 1}
-													className="mb-0  p-2"
+													className="mb-0 location__item p-2"
 													onClick={() => {
 														dispatch({
 															type: actionTypes.SET_LOCATION,
@@ -97,10 +99,11 @@ function Navigation() {
 											))}
 										</div>
 									}>
-									<span className="nav__link location">
+									<div className="nav__link location flexed">
+										<FiMapPin className="mb-1 mr-1 location__icon" />
 										{location}
 										<IoMdArrowDropdown className="location__dropdown mb-1 mr-1" />{" "}
-									</span>
+									</div>
 								</Tippy>{" "}
 								{navItems.map((item, id) => {
 									const { itemIcon, itemName, itemUrl, dropdown, hoverItems } =
@@ -269,14 +272,28 @@ const StyledNavbar = styled(Navbar)`
 		color: var(--nav-hvr);
 		font-size: 18px;
 		cursor: pointer;
+		transition: var(--sht-trans);
 
 		&:hover {
-			color: var(--deep-hvr);
+			color: var(--deep-hvr) !important;
 		}
 	}
 
 	.location__dropdown {
 		font-size: 20px;
+	}
+
+	.location__item {
+		cursor: pointer;
+		transition: var(--sht-trans);
+
+		&:hover {
+			color: var(--nav-hvr);
+		}
+	}
+
+	.location__icon {
+		color: #fff;
 	}
 
 	& .nav__right-item {
