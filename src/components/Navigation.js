@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import ReactTooltip from "react-tooltip";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { navItems } from "../appData";
+import { navItems, locationItems } from "../appData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { useStateValue } from "../global-state/StateProvider";
@@ -22,7 +22,7 @@ function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
-	const [{}, dispatch] = useStateValue();
+	const [{ location }, dispatch] = useStateValue();
 
 	function fixedListener() {
 		if (window.scrollY >= 100) {
@@ -75,6 +75,33 @@ function Navigation() {
 					<Navbar.Collapse id="the-nav">
 						<Nav className="nav-wrapper ">
 							<div className="nav__left flexed">
+								<Tippy
+									interactive
+									trigger="click"
+									placement="right"
+									arrow={false}
+									content={
+										<div className="hero__tip-wrap">
+											{locationItems.map((location, id) => (
+												<h6
+													key={id + 1}
+													className="mb-0 hero__tip-item p-2"
+													onClick={() => {
+														dispatch({
+															type: actionTypes.SET_LOCATION,
+															payload: location,
+														});
+													}}>
+													{location}
+												</h6>
+											))}
+										</div>
+									}>
+									<span className="hero__dropdown">
+										{location}
+										<IoMdArrowDropdown />{" "}
+									</span>
+								</Tippy>{" "}
 								{navItems.map((item, id) => {
 									const { itemIcon, itemName, itemUrl, dropdown, hoverItems } =
 										item;

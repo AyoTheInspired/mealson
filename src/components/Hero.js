@@ -8,10 +8,11 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../global-state/StateProvider";
 import { locationItems } from "../appData";
+import { actionTypes } from "../global-state/reducer";
 
 function Hero(props, ref) {
-	const [{ cuisineItem }] = useStateValue();
-	const [location, setLocation] = useState("Lagos");
+	const [{ location }, dispatch] = useStateValue();
+	// const [location, setLocation] = useState("Lagos");
 
 	return (
 		<Container fluid>
@@ -41,14 +42,17 @@ function Hero(props, ref) {
 								arrow={false}
 								content={
 									<div className="hero__tip-wrap">
-										{locationItems.map((item, id) => (
+										{locationItems.map((location, id) => (
 											<h6
 												key={id + 1}
 												className="mb-0 hero__tip-item p-2"
 												onClick={() => {
-													setLocation(item);
+													dispatch({
+														type: actionTypes.SET_LOCATION,
+														payload: location,
+													});
 												}}>
-												{item}
+												{location}
 											</h6>
 										))}
 									</div>

@@ -2,6 +2,7 @@ import { BiDish } from "react-icons/bi";
 import { FaTruck, FaHome } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { BsQuestionCircle } from "react-icons/bs";
+// import {location} from './global-state/StateProvider'
 
 export const navItems = [
 	{

@@ -2,12 +2,13 @@ export const initialState = {
 	cuisineItem: null,
 	category: "",
 	cuisineClicked: false,
+	location: "Bahama",
 };
 
 export const actionTypes = {
 	OPEN_DYNAMICS: "OPEN_DYNAMICS",
 	CLOSE_DYNAMICS: "CLOSE_DYNAMICS",
-	SET_CUISINE: "SET_CUISINE",
+	SET_LOCATION: "SET_LOCATION",
 };
 
 const reducer = (state, action) => {
@@ -20,11 +21,10 @@ const reducer = (state, action) => {
 				category: action.category,
 			};
 
-		case actionTypes.CLOSE_DYNAMICS:
+		case actionTypes.SET_LOCATION:
 			return {
 				...state,
-				cuisineClicked: false,
-				cuisineItem: null,
+				location: action.payload,
 			};
 
 		default:
