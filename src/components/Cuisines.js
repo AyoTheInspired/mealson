@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { Container, Row, Card } from "react-bootstrap";
 import styled from "styled-components";
 import { useStateValue } from "../global-state/StateProvider";
 
 function Cuisines() {
-	const [meals, setMeals] = useState({});
 	const [menu, setMenu] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [{ cuisineItem, category }, dispatch] = useStateValue();
+	const [{ cuisineItem, category }] = useStateValue();
 
 	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
 
@@ -64,7 +62,7 @@ function Cuisines() {
 								</h3>
 							) : (
 								menu.map((menu, id) => {
-									const { label, image, dishType } = menu.recipe;
+									const { label, image } = menu.recipe;
 									return (
 										<Card
 											key={id + 1}
