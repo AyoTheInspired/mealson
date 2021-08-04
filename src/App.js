@@ -1,5 +1,4 @@
 import "./App.css";
-import { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home";
 import RegModal from "./components/RegModal";
@@ -9,8 +8,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Cuisines from "./components/Cuisines";
 
 function App() {
-	// const trendingRef = useRef(null);
-
 	return (
 		<Router>
 			<div className="App">
