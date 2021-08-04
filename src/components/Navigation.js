@@ -85,7 +85,7 @@ function Navigation() {
 											{locationItems.map((location, id) => (
 												<h6
 													key={id + 1}
-													className="mb-0 hero__tip-item p-2"
+													className="mb-0  p-2"
 													onClick={() => {
 														dispatch({
 															type: actionTypes.SET_LOCATION,
@@ -97,9 +97,9 @@ function Navigation() {
 											))}
 										</div>
 									}>
-									<span className="hero__dropdown">
+									<span className="nav__link location">
 										{location}
-										<IoMdArrowDropdown />{" "}
+										<IoMdArrowDropdown className="location__dropdown mb-1 mr-1" />{" "}
 									</span>
 								</Tippy>{" "}
 								{navItems.map((item, id) => {
@@ -258,10 +258,25 @@ const StyledNavbar = styled(Navbar)`
 		font-size: 17px;
 		color: #fff;
 		transition: var(--sht-trans);
+		font-family: "Rubik", sans-serif;
 
 		&:hover {
 			color: var(--nav-hvr) !important;
 		}
+	}
+
+	.location {
+		color: var(--nav-hvr);
+		font-size: 18px;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--deep-hvr);
+		}
+	}
+
+	.location__dropdown {
+		font-size: 20px;
 	}
 
 	& .nav__right-item {

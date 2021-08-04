@@ -1,25 +1,24 @@
 import { BiDish } from "react-icons/bi";
 import { FaTruck, FaHome } from "react-icons/fa";
-import { FiMapPin } from "react-icons/fi";
 import { BsQuestionCircle } from "react-icons/bs";
 // import {location} from './global-state/StateProvider'
 
 export const navItems = [
-	{
-		itemIcon: <FiMapPin />,
-		itemName: "Lagos",
-		itemUrl: "#",
-		dropdown: true,
-		hoverItems: [
-			"Los Angeles",
-			"Chicago",
-			"Houston",
-			"Philadelphia",
-			"San Diego",
-			"Miami",
-			"New York",
-		],
-	},
+	// {
+	// 	itemIcon: <FiMapPin />,
+	// 	itemName: "Lagos",
+	// 	itemUrl: "#",
+	// 	dropdown: true,
+	// 	hoverItems: [
+	// 		"Los Angeles",
+	// 		"Chicago",
+	// 		"Houston",
+	// 		"Philadelphia",
+	// 		"San Diego",
+	// 		"Miami",
+	// 		"New York",
+	// 	],
+	// },
 
 	{
 		itemIcon: <FaHome />,
