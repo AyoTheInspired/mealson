@@ -86,12 +86,14 @@ function Cuisines() {
 										<Card
 											key={id + 1}
 											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-3 cuisine__card">
-											<Card.Img
-												variant="top"
-												src={image}
-												className="cuisine__image"
-												alt={label}
-											/>
+											{image && (
+												<Card.Img
+													variant="top"
+													src={image}
+													className="cuisine__image"
+													alt={label}
+												/>
+											)}
 											<Card.Body className="cuisine__body flex-col">
 												<h5 className="cuisine__label text-center">{label}</h5>
 											</Card.Body>
