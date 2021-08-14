@@ -8,6 +8,7 @@ export const initialState = {
 export const actionTypes = {
 	OPEN_DYNAMICS: "OPEN_DYNAMICS",
 	SET_LOCATION: "SET_LOCATION",
+	RETRIEVE_CATEGORY: "RETRIEVE_CATEGORY",
 };
 
 const reducer = (state, action) => {
@@ -21,6 +22,19 @@ const reducer = (state, action) => {
 			};
 
 		case actionTypes.SET_LOCATION:
+			return {
+				...state,
+				location: action.payload,
+			};
+
+		case actionTypes.RETRIEVE_CATEGORY:
+			return {
+				...state,
+				category: action.payload,
+				cuisineItem: action.name,
+			};
+
+		case actionTypes.RETRIEVE_LOCATION:
 			return {
 				...state,
 				location: action.payload,

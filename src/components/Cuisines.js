@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Card } from "react-bootstrap";
 import styled from "styled-components";
+import { actionTypes } from "../global-state/reducer";
 import { useStateValue } from "../global-state/StateProvider";
 
 function Cuisines() {
 	const [menu, setMenu] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [{ cuisineItem, category }] = useStateValue();
+	const [{ cuisineItem, category }, dispatch] = useStateValue();
 
 	const APP_KEY = "ef7e048992b49a3a6223bee27304eacc";
 
@@ -31,7 +32,22 @@ function Cuisines() {
 	};
 
 	useEffect(() => {
+		const data = JSON.parse(localStorage.getItem("cuisine-category"));
+
+		const item = JSON.parse(localStorage.getItem("cuisine-name"));
+
+		dispatch({
+			type: actionTypes.RETRIEVE_CATEGORY,
+			payload: data,
+			name: item,
+		});
+	}, []);
+
+	useEffect(() => {
 		getCuisines();
+
+		localStorage.setItem("cuisine-category", JSON.stringify(category));
+		localStorage.setItem("cuisine-name", JSON.stringify(cuisineItem));
 	}, [category]);
 
 	return (
@@ -66,7 +82,7 @@ function Cuisines() {
 									return (
 										<Card
 											key={id + 1}
-											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-2 cuisine__card">
+											className="col-lg-3 col-md-5 col-sm-8 mx-2 mt-3 cuisine__card">
 											<Card.Img
 												variant="top"
 												src={image}

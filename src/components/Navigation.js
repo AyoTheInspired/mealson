@@ -22,6 +22,7 @@ import { actionTypes } from "../global-state/reducer";
 function Navigation() {
 	const [fixedNav, setFixedNav] = useState(false);
 	const [searchClicked, setSearchClicked] = useState(false);
+	const [navIsShown, setNavIsShown] = useState(false);
 	const [burgerClicked, setBurgerClicked] = useState(false);
 	const [{ location }, dispatch] = useStateValue();
 
@@ -32,6 +33,19 @@ function Navigation() {
 			setFixedNav(false);
 		}
 	}
+
+	useEffect(() => {
+		const locationData = JSON.parse(localStorage.getItem("location"));
+
+		dispatch({
+			type: actionTypes.RETRIEVE_LOCATION,
+			payload: locationData,
+		});
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("location", JSON.stringify(location));
+	}, [location]);
 
 	useEffect(() => {
 		window.addEventListener("scroll", fixedListener);
@@ -74,7 +88,7 @@ function Navigation() {
 						</div>
 					</Navbar.Toggle>
 					<Navbar.Collapse id="the-nav">
-						<Nav className="nav-wrapper ">
+						<Nav className="nav-wrapper">
 							<div className="nav__left flexed">
 								<Tippy
 									interactive
@@ -111,7 +125,7 @@ function Navigation() {
 										<div
 											to={itemUrl}
 											className="nav__item-wrap flexed mx-2"
-											key={id}>
+											key={id + 1}>
 											<span className="nav__icon mb-1 mr-1"> {itemIcon} </span>
 
 											<Tippy
@@ -162,7 +176,7 @@ function Navigation() {
 															);
 														})
 													) : (
-														<h6 className="mb-0 soon__text"> {itemName} </h6>
+														<h6 className="mb-0 soon__text">{itemName} </h6>
 													)
 												}>
 												<NavLink to={itemUrl} className="nav__link">
