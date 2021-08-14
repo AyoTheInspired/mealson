@@ -35,12 +35,15 @@ function Cuisines() {
 		const data = JSON.parse(localStorage.getItem("cuisine-category"));
 
 		const item = JSON.parse(localStorage.getItem("cuisine-name"));
-
-		dispatch({
-			type: actionTypes.RETRIEVE_CATEGORY,
-			payload: data,
-			name: item,
-		});
+		if (!cuisineItem && !category) {
+			dispatch({
+				type: actionTypes.RETRIEVE_CATEGORY,
+				payload: data,
+				name: item,
+			});
+		} else {
+			return;
+		}
 	}, []);
 
 	useEffect(() => {

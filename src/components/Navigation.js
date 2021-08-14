@@ -37,10 +37,14 @@ function Navigation() {
 	useEffect(() => {
 		const locationData = JSON.parse(localStorage.getItem("location"));
 
-		dispatch({
-			type: actionTypes.RETRIEVE_LOCATION,
-			payload: locationData,
-		});
+		if (!location) {
+			dispatch({
+				type: actionTypes.RETRIEVE_LOCATION,
+				payload: locationData,
+			});
+		} else {
+			return;
+		}
 	}, []);
 
 	useEffect(() => {
